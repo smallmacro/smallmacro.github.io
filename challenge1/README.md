@@ -34,8 +34,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Github repository](https://github.com/smallmacro/challenge1)
-- Live Site URL: [Netlify URL](https://kind-curie-a68563.netlify.app)
+- Solution URL: [Github repository](https://github.com/smallmacro/smallmacro.github.io/tree/main/challenge1)
+- Live Site URL: [Github Pages URL](https://github.com/smallmacro/smallmacro.github.io/tree/main/challenge1)
 
 ## My process
 

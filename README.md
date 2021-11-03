@@ -36,7 +36,7 @@ My final goal is to tackle at least the `advanced` level project.
 
 ### Built with
 - Semantic HTML5 markup
-- CSS custom properties(Css Variables)
+- CSS custom properties(CSS Variables)
 - Google Fonts
 - Flexbox
 - CSS Grid
