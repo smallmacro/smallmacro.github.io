@@ -1,0 +1,137 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+}
+// 1rem = 16px
+html{
+    font-size: 10px;
+    font-family: 'Red Hat Display', sans-serif;
+}
+
+body{
+    background: url('../images/pattern-background-desktop.svg') no-repeat;
+    background-color: hsl(225, 100%, 94%);
+}
+main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 45em;
+    
+    border-radius: 2em;
+    background-color: #fff;
+    margin: 10em auto;
+    // box-shadow: 1px 2px 5px hsl(224, 23%, 55%);
+
+}
+section {
+    width:100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.banner img {
+    object-fit: cover;
+    width: 100%;
+    border-radius: 2em 2em 0 0;
+}
+.order_summary {
+    padding: 2em 4.5em;
+    row-gap: 1em;
+    font-size: 1.6em;
+    color: hsl(245, 75%, 52%);
+    text-align: center;
+    h1 {
+        font-size: 2em;
+        font-weight: 900;
+        line-height: 1.6;
+        color: hsl(223, 47%, 23%);
+    }
+    p{
+        padding: 0;
+        text-indent: 0.5em;
+        // width:60%;
+        color: hsl(224, 23%, 55%);
+        
+    }
+    
+}
+
+.plan{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    column-gap: 3em;
+    background-color: hsl(225, 100%, 98%);
+    padding: 1em;
+    border-radius: 1em;
+    .wrapper{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        column-gap: 1em;
+    }
+    span{
+        display: block;
+        color: hsl(224, 23%, 55%);
+        strong{
+            color: #000;
+        }
+    }
+    a {
+        display: block;
+        color: hsl(245, 75%, 52%);
+        text-decoration: underline;
+    }
+    img {
+        object-fit: cover;
+        width: 2.5em;
+        height: 2.5em;
+    }
+}
+button {
+    cursor: pointer;
+    // appearance: none;
+    padding: 1em;
+    width: 100%;
+    background-color: hsl(245, 75%, 52%);
+    border-radius: 0.5em;
+    color: #fff;
+    border: 1px solid transparent;
+    // font-size: 1.6em;
+    box-shadow: 1px 5px 10px hsl(224, 23%, 55%);
+}
+a.cancle_btn{
+        color: hsl(224, 23%, 55%);
+        
+}
+
+@media screen and (max-width:480px) {
+    body{
+        background: url('../images/pattern-background-mobile.svg') no-repeat;
+        background-size: contain;
+        background-color: hsl(225, 100%, 94%);
+        height: calc(-6em + 100vh);
+        max-width:100vw;
+    }
+    main{
+        margin: 6em auto;
+        width:33em;
+    }
+    .order_summary {
+        padding: 2em 1.5em;
+        font-size: 1.4em;
+        text-align: center;
+    }
+    .wrapper span{
+        text-align: left;
+    }
+    
+}
