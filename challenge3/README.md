@@ -45,8 +45,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [Github repository](https://github.com/smallmacro/smallmacro.github.io/tree/main/challenge3)
+- Live Site URL: [Github Pages URL](https://smallmacro.github.io/challenge3/
 
 ## My process
 

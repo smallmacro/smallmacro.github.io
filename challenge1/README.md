@@ -35,7 +35,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: [Github repository](https://github.com/smallmacro/smallmacro.github.io/tree/main/challenge1)
-- Live Site URL: [Github Pages URL](https://github.com/smallmacro/smallmacro.github.io/tree/main/challenge1)
+- Live Site URL: [Github Pages URL](https://smallmacro.github.io/challenge1/)
 
 ## My process
 

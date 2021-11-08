@@ -35,8 +35,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Github repositery](https://github.com/smallmacro/challenge2)
-- Live Site URL: [Netlify URl](https://xenodochial-mestorf-3c034f.netlify.app)
+- Solution URL: [Github repositery](https://github.com/smallmacro/smallmacro.github.io/tree/main/challenge2)
+- Live Site URL: [Github Pages URL](https://smallmacro.github.io/challenge2/)
 
 ## My process
 
