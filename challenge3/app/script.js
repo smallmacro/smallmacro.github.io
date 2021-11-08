@@ -1,6 +1,6 @@
 //Global variables
 let timeFrame = 'weekly'; // set the default timefame to weekly
-let url = '../data.json';  //default json url
+let url = '/challenge3/data.json';  //default json url
 let json_data;  
 
 document.addEventListener('DOMContentLoaded',function(){

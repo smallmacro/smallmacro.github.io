@@ -30,6 +30,8 @@ My final goal is to tackle at least the `advanced` level project.
 
 - [Challenge2: Four Card Feature Section](https://smallmacro.github.io/challenge2/)
 
+- [Challenge3: Time tracking dashboard challenge](https://smallmacro.github.io/challenge3/)
+
 
 ## My process
 - `Newbie` projects purely with `html` and `css` completed.
@@ -46,6 +48,14 @@ My final goal is to tackle at least the `advanced` level project.
 ### What I learned
 -  11.3. The strategy on mobile-first or desktop=first depends on the similarities between the PC design and mobile. And the implementation of it in `challenge2` project really works well.
 
+- 11.8 
+  1. Safely munipulate the DOM by listening to the `DOMContenLoaded` event.
+
+  2. Complete the basic ES6 syntax learning and use the `let` and  `arrow function`
+
+  3. Load the json data through `fetch` function.
+
+  4. Mobile-first flow works well since there are many similarities among the mobile, tablet(customized by myself) and desktop design.
 
 
 ### Continued development
@@ -56,7 +66,7 @@ My final goal is to tackle at least the `advanced` level project.
 
 - [The State Of Mobile First and Desktop First](https://ishadeed.com/article/the-state-of-mobile-first-and-desktop-first/) - This article helps me figure out  how to make decision between the Moble-first and PC first workflow.
 
-
+- [LICEcap](https://www.cockos.com/licecap/) - Great and simple screen recording app, really recommand it.
 
 ## Author
 
