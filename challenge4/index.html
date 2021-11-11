@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./dist/style.css">
+  <title>Frontend Mentor | GitHub user search app</title>
+
+</head>
+<body>
+  <header>
+    <h1 class="app-name">devfinder</h1>
+    <a href="#" class="color-scheme">
+      <span class="scheme-name">DARK</span>
+      <span class="icons moon"></span> 
+    </a>  
+  </header>
+  
+
+  <main>
+    <div class="search-form">
+      <form action="#">
+        <label for="username" class="icons search-icon"></label>
+        <input type="text" name="username" class="username" id="username" placeholder="Search GitHub username...">
+        <button type="submit">Search</button>
+      </form>
+      <span class="text-info display-none">No results</span>  
+    </div>
+
+    <section class="user-section">
+      <div class="user-avatar">
+        <img src="" alt="User avatar" class="avatar-img">
+      </div>
+      <div class="user-info">
+        <h2 class="name">The Octocat</h2>
+        <h3 class="login-name">@octocat</h3>
+        <span class="join-date">Joined 25 Jan 2011</span>
+      </div>
+      <div class="repo-wrapper">
+        <p class="introduction">
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corrupti consequuntur dolorum voluptate dolor possimus velit eius quos molestias provident earum, quia ducimus! Similique ut quibusdam debitis accusamus, porro minima repudiandae!
+        </p>
+        <div class="repo-info">
+          <div class="repos">
+            <h4>Repos</h4>
+            <span class="numbers">1</span>
+          </div>
+          <div class="followers">
+            <h4>Followers</h4>
+            <span class="numbers">1</span>
+          </div>
+          <div class="following">
+            <h4>Following</h4>
+            <span class="numbers">1</span>
+          </div>
+        </div>
+        <div class="links">
+          <ul>
+            <li><a href="#" class="link">
+                <span class="icons location"></span>
+                <span>San Francisco</span></a>  
+            </li>
+            <li>
+              <a href="#" class="link">
+                <span class="icons link-ico"></span>
+                <span>https://github.blog</span>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="link ">
+                <span class="icons twitter"></span>
+                <span>Not available</span>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="link">
+                <span class="icons company"></span>
+                <span>@github</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      
+    </section>
+
+  </main>
+
+  
+  
+
+  
+<script src="./app/script.js" defer></script>
+</body>
+</html>

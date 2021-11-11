@@ -1,0 +1,424 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+}
+html{
+    font-family: 'Space Mono', monospace;
+    font-size: 62.5%;
+}
+:root{
+    --theme-name:light;
+    --theme-body-bg-color: #F6F8FF; // background color
+    --theme-main-bg-color:#FEFEFE; // background color
+    --theme-font-color: #4B6A9B; 
+    --theme-bold-color: #2B3442;
+    //unchanged variables
+    --btn-bg-color: #0079FF;   
+    --theme-shadow-color: #697C9A;
+}
+
+
+@media (prefers-color-scheme: light){
+    :root{
+        --theme-name:light;
+        --theme-body-bg-color: #F6F8FF; // background color
+        --theme-main-bg-color:#FEFEFE; // background color
+        --theme-font-color: #4B6A9B; 
+        --theme-bold-color: #2B3442;
+        
+    }
+}
+//dark mode
+@media (prefers-color-scheme: dark){
+    :root{
+        --theme-name:dark;
+        --theme-body-bg-color: #141D2F; // background color
+        --theme-main-bg-color:#1E2A47; // background color
+        --theme-font-color: #FFFFFF; 
+        --theme-bold-color: #FFFFFF;
+         
+    }
+}
+
+body{
+    font-weight: 400;
+    font-size: 1.3rem;
+    padding: 3.1rem 2.4rem;
+    width: 100vw;
+    background-color: var(--theme-body-bg-color)
+}
+header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.color-scheme{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.icons{
+    display: block;
+    width: 2rem;
+    height: 2rem;
+    background-color: var(--theme-font-color);
+}
+.icons.moon{
+    mask: url('../assets/icon-moon.svg')  no-repeat;
+}
+.icons.sun{
+    mask: url('../assets/icon-sun.svg') no-repeat;
+}
+.icons.search-icon{
+    background: url("../assets/icon-search.svg") no-repeat;
+    background-size: cover;
+}
+.icons.location{
+    mask: url("../assets/icon-location.svg") no-repeat;
+}
+.icons.twitter{
+    mask: url("../assets/icon-twitter.svg") no-repeat;
+}
+
+.icons.link-ico{
+    mask: url("../assets/icon-website.svg") no-repeat;
+}
+.icons.company{
+    mask: url("../assets/icon-company.svg") no-repeat;
+}
+
+
+
+.app-name{
+    font-weight: 700;
+    font-size: 2.6rem;
+    color: var(--theme-bold-color);
+}
+.color-scheme{
+    display: flex;
+    flex-direction: row;
+    column-gap: 1.6rem;
+    align-items: center;
+    justify-content: center;
+    color: var(--light-normal-color);
+}
+.scheme-name{
+    font-weight: 700;
+    font-size: 1.3rem;
+    color: var(--theme-font-color);
+    letter-spacing: 0.25rem;
+    
+}
+input, button{
+    appearance: none;
+    
+    
+}
+input:focus{
+    outline: 0;
+}
+.search-form{
+    position: relative;
+    background-color: var(--theme-main-bg-color);
+    margin-top: 3.6rem;
+    padding: 0.65rem 0.7rem 0.75rem 0.7rem;
+    border-radius: 1.5rem;
+    box-shadow: 0 16px 30px -10px rgba(var(--theme-shadow-color),0.1986);
+    
+    button{
+        position: absolute;
+        cursor: pointer;
+        right: 2.14%;
+        top:10.83%;
+        font-weight: 700;
+        font-size: 1.4rem;
+        padding: 1.25rem 1.8rem;
+        background-color: var(--btn-bg-color);
+        color: #FFFFFF;
+        border-radius: 1rem;
+        border: 1px solid transparent;
+    }
+    button:hover{
+        background-color: #60ABFF;
+    }
+}
+.text-info{
+    position: absolute;
+    font-weight: 700;
+    font-size: 1.5rem;
+    height: 2.2rem;
+    color: #F74646;
+    right: 25.93%;
+    top: calc(50% - 2.2rem/2 + 0.05rem);
+    
+}
+
+.search-icon{
+    position: absolute;
+    left: 1.6rem;
+    top: 2rem;
+}
+
+.username{
+    font-size: 1.3rem;
+    font-weight: 400;
+    line-height: 2.5rem;
+    height: 2.5rem;
+    border: 2px solid transparent;
+    padding:  2rem 1.6rem;
+    width:calc(18.4 * 100vw / 32.7);
+    
+    margin-left: 2.9rem;
+    cursor: pointer;
+    color: var(--theme-font-color);
+    background-color: var(--theme-main-bg-color);
+}
+.name{
+    color: var(--theme-bold-color);
+}
+input[type='text']::placeholder{
+    font-size: 1.3rem;
+    font-weight: 400;
+    line-height: 2.5rem;
+}
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus {
+    background-color: var(--theme-main-bg-color) !important;
+    font-family: inherit;
+    color: var(--theme-font-color);
+    box-shadow: 0 0 0px 1000px var(--theme-main-bg-color) inset;
+    transition: background-color 5000s ease-in-out 0s;
+}
+.login-name{
+    font-weight: 400;
+    font-size: 1.3rem;
+    color: var(--btn-bg-color);
+}
+.visibility-hidden{
+    visibility: hidden;
+    opacity: 0;
+}
+.display-none {
+    display: none;
+}
+
+section {
+    padding:  2rem 1.6rem;
+    background-color: var(--theme-main-bg-color);
+    margin-top: 1.6rem;
+    border-radius: 1.5rem;
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    row-gap: 3.3rem;
+    box-shadow: 0 16px 30px -10px rgba(var(--theme-shadow-color),0.1986);
+
+}
+.user-avatar{
+    grid-column: 1;
+    grid-row: 1;
+    img{
+        width: 7rem;
+        height: 7rem;
+        max-width: 100%;
+        object-fit: cover;
+        border-radius: 50%;
+        background-color: #2B3442;
+    }
+}
+.user-info{
+    grid-column: 2;
+    grid-row: 1;
+    display: grid;
+    // flex-direction: column;
+}
+.join-date{
+    color:var(--theme-font-color);
+
+}
+.repo-wrapper{
+    grid-column: 1 / span2;
+    grid-row: 2;
+    display: flex;
+    flex-direction: column;
+    row-gap:2.3rem;
+    color:var(--theme-font-color);
+}
+.repo-info{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    background-color: var(--theme-body-bg-color);
+    padding: 1.8rem 0;
+    border-radius: 1.5rem;
+    h4{
+        font-weight: 400;
+        font-size: 11px;
+    }
+}
+.introduction{
+    color:var(--theme-font-color);
+    line-height: 2.5rem;
+}
+.numbers{
+    display: block;
+    text-align: center;
+    font-weight: 700;
+    font-size: 1.6rem;
+    color: var(--theme-bold-color);
+}
+.links ul{
+    display: flex;
+    flex-direction: column;
+    row-gap:1.5rem;
+    margin-bottom: 2.8rem;
+}
+.link{
+    display: flex;
+    flex-direction: row;
+    column-gap: 1.3rem;
+    color: var(--theme-font-color);
+}
+.link.unavailable {
+    opacity: 0.5;
+    .link-ico{
+        opacity: 0.5;
+    }
+}
+.link.valid-link:hover{
+    text-decoration: underline;
+}
+
+
+@media screen and (min-width:48em) {
+    body{
+        
+        padding: 14rem 9.7rem;
+    }
+    section {
+        column-gap: 4.1rem;
+        padding:  3.4rem 4rem;
+        row-gap: 3rem;
+        align-items: center;
+    }
+    .user-avatar{
+        img{
+            width: 11.7rem;
+            height: 11.7rem;
+        }
+    }
+    .search-form{
+        padding:  0.95rem 1rem;
+        button{
+            font-size: 1.6rem;
+        }
+    }
+    .username{
+        font-size: 1.8rem;
+    }
+    .name{
+        font-size: 2.6rem;
+    }
+    .login-name{
+        font-size: 1.6rem;
+    }
+    .join-date{
+        font-size: 1.5rem;
+    }
+    .introduction{
+        font-size: 1.5rem;
+    }
+    .search-icon{
+        width: 2.4rem;
+        height: 2.4rem;
+        left: 2rem;
+        top: 2rem;
+
+    }
+    input::placeholder{
+        font-size: 1.8rem;
+    }
+    .repo-info{
+        padding: 1.5rem 3.2rem;
+        h4{
+            font-size: 1.3rem;
+        }
+    }
+    .numbers{
+        font-size: 2.2rem;
+    }
+    .links ul{
+        display: flex;
+        flex-flow: row wrap;
+        row-gap:1.9rem;
+        margin-bottom: 2.8rem;
+        justify-content: space-around;
+    }
+    .links li{
+        flex-grow: 1;
+        flex-shrink: 1;
+        flex-basis: 40%;
+    }
+    .link{
+        font-size: 1.5rem;
+    }
+}
+
+@media screen and (min-width:70em) {
+    body{
+        padding-top: 14.4rem ;
+        
+    }
+    header, main{
+        min-width: 73rem;
+        margin: 0 auto;
+        width: 50.694vw;
+    }
+
+    section{
+        
+        column-gap: 3.7rem;
+        row-gap: 3rem;
+    }
+    .user-avatar{
+        grid-column: 1;
+        grid-row: 1/ span2;
+    }
+
+    .user-info{
+        grid-column: 2;
+        grid-row: 1;
+        grid-template-columns: 1fr 1fr;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .username{
+        max-width: 68rem;
+    }
+    .name{
+        grid-column: 1;
+        grid-row: 1;
+    }
+    .login-name{
+        grid-column: 1;
+        grid-row: 2;
+    }
+    .join-date{
+        grid-column: 2;
+        grid-row: 1;
+        text-align: right;
+    }
+    .repo-wrapper{
+        grid-column: 2;
+        grid-row: 2;
+    }
+    button{
+        transition: background-color ease-in 250ms;
+    }
+
+}
