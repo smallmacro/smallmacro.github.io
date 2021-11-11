@@ -34,11 +34,11 @@ Users should be able to:
 
 ### Screenshot
 
-![Mobile screenshot](./mobile_screenshot.jpg)
+![Mobile screenshot](./mobile_screenshot.png)
 
-![Tablet screenshot](./tablet_screenshot.jpg)
+![Tablet screenshot](./tablet_screenshot.png)
 
-![Desktop screenshot](./desktop_screenshot.jpg)
+![Desktop screenshot](./desktop_screenshot.png)
 
 ![Recording](./devfinder.gif)
 
@@ -151,12 +151,12 @@ Test and review the code to find bugs.
 
 - The GitHub users API endpoint is `https://api.github.com/users/:username`. So, if you wanted to search for the Octocat profile, you'd be able to make a request to `https://api.github.com/users/octocat`.
 
-- ![prefer-color-scheme](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-color-scheme) - The prefers-color-scheme CSS media feature is used to detect if the user has requested a light or dark color theme.
+- [prefer-color-scheme](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-color-scheme) - The prefers-color-scheme CSS media feature is used to detect if the user has requested a light or dark color theme.
 
-- ![How to use CSS variables like a pro](https://blog.logrocket.com/how-to-use-css-variables-like-a-pro/)This article
+- [How to use CSS variables like a pro](https://blog.logrocket.com/how-to-use-css-variables-like-a-pro/)This article
 really helps about  how to munipulate css variables when switching themes.
 
-- ![How to handle HTTP code... - Stackoverflow](https://stackoverflow.com/questions/40248231/how-to-handle-http-code-4xx-responses-in-fetch-api) This question inspires me to construct a new Promise and sent json data along with `respone.status` and `respone.ok`. This enables me to munipulate the UI and update the data based on `respone.status` and `respone.ok`.
+- [How to handle HTTP code... - Stackoverflow](https://stackoverflow.com/questions/40248231/how-to-handle-http-code-4xx-responses-in-fetch-api) This question inspires me to construct a new Promise and sent json data along with `respone.status` and `respone.ok`. This enables me to munipulate the UI and update the data based on `respone.status` and `respone.ok`.
 
 ## Author
 

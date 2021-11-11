@@ -32,6 +32,8 @@ My final goal is to tackle at least the `advanced` level project.
 
 - [Challenge3: Time tracking dashboard challenge](https://smallmacro.github.io/challenge3/)
 
+- [Challenge4: GitHub user search app challenge](https://smallmacro.github.io/challenge4/)
+
 
 ## My process
 - `Newbie` projects purely with `html` and `css` completed.
@@ -59,10 +61,10 @@ My final goal is to tackle at least the `advanced` level project.
   3. Load the json data through `fetch` function.
 
 - 11.9  
-  - ![Regular Expression](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/) If condition is needed, then consider the alternation may complement the remaining constraints.
+  - [Regular Expression](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/) If condition is needed, then consider the alternation may complement the remaining constraints.
 
   Problem solved:
-  ![Restrict Possible Usernames](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/regular-expressions/restrict-possible-usernames)
+  [Restrict Possible Usernames](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/regular-expressions/restrict-possible-usernames)
 
   ```javascript
   let username = "JackOfAllTrades";
