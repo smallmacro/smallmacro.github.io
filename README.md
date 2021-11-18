@@ -54,7 +54,7 @@ My final goal is to tackle at least the `advanced` level project.
 -  11.3. The strategy on mobile-first or desktop=first depends on the similarities between the PC design and mobile. And the implementation of it in `challenge2` project really works well.
 
 - 11.8 
-  1. Safely munipulate the DOM by listening to the `DOMContenLoaded` event.
+  1. Safely manipulate the DOM by listening to the `DOMContenLoaded` event.
 
   2. Complete the basic ES6 syntax learning and use the `let` and  `arrow function`
 
@@ -107,6 +107,90 @@ My final goal is to tackle at least the `advanced` level project.
         transition: background-color 5000s ease-in-out 0s;
     }
     ```
+
+- 11.12
+  `Array.splice(startIndex, amountToDelete, parameters to insert in the same index)` the Array which called this function also changed value.
+  `Array.sort((a,b) => a-b)` return a sorted  ascending array,`(a,b) => a-b` is a compare function
+  
+  ```javascript
+  //remove the duplicates in array  
+  arr = arr.filter(function (value, index, array) { 
+    return array.indexOf(value) === index;
+  });
+  // another method to get unique array item
+  [...new Set(arr)]
+  //The includes() method returns true if a string contains a specified string, otherwise false.includes() is case sensitive.
+  ```
+
+  `Object` dot notation vs bracket notation:
+
+
+- 11.17
+  `Array.from(iterator)`transfer a iterator into an Array.
+  `String.fromCharCode(number)` turn a char code number into a character, while `str.charCodeAt()`return a character code. `A-Z`: `65-90`.
+  To generate a Range(a,b) `Array`
+
+  2.
+  ```javascript
+  //Find the smallest common multiple of the provided parameters that can be evenly divided by both, as well as by all sequential numbers in the range between these parameters.
+  function smallestCommons(arr) {
+    let max = Math.max(...arr);
+    let min = Math.min(...arr);
+    let generated_arr = [];
+    for(let i=min;i<= max; i++){
+      generated_arr.push(i);
+    }
+    console.log(generated_arr);
+    return generated_arr.reduce((acc,cur,index,array)=>{
+      acc = findSmallCommon(acc,cur);
+      return acc
+    });
+  }
+  //欧几里德算法  通过先求最大公约数来求两数的最小公倍数
+  function findSmallCommon(a, b){
+    let divisor = Math.min(a,b);
+    let dividend = Math.max(a,b);
+    let reminder = dividend % divisor;
+    let lcm;
+    while(reminder !== 0){
+      dividend = divisor;
+      divisor = reminder;
+      reminder = dividend % divisor;
+    }
+    lcm = divisor;
+    return (a*b)/lcm;
+  }
+
+
+  ```
+
+  Array.prototype.flat() or Array.prototype.flatMap() methods.：Flatten a nested array.
+
+  ```javascript
+  //recursive function to flat nested array
+
+  function steamrollArray(arr){
+    let init = [];
+    let nested =  arr.filter(Array.isArray);
+    let element = arr.filter(ele => !Array.isArray(ele));
+    
+    if(nested.length === 0){
+      console.log("Get the element",element);
+      return [].concat(element);
+    }else{
+      init = init.concat(element);
+      nested.forEach(ele => {
+        init = init.concat(steamrollArray(ele))
+        
+      })
+      
+      return init;
+      
+    }
+  }
+
+  ```
+
 ### Continued development
 -  `Junior` challenges 
 
