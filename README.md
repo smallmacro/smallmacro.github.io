@@ -189,8 +189,69 @@ My final goal is to tackle at least the `advanced` level project.
     }
   }
 
+  //solution 2
+  function steamrollArray(arr) {
+    const flat = [].concat(...arr);
+    return flat.some(Array.isArray) ? steamrollArray(flat) : flat;
+  }
+
   ```
 
+
+  - `SASS Mixins` , `if condition` , `for loop`, `@each` to Map over Items
+  ```css
+  /* if condition  */
+  @mixin border-stroke($val){
+    @if $val == light {
+      border:1px solid black;
+    }
+    @else if $val == medium {
+      border:3px solid black;
+    }
+    @else if $val == heavy {
+      border:6px solid black;
+    }
+    @else  {
+      border: none;
+    }
+  }
+
+  #box {
+    width: 150px;
+    height: 150px;
+    background-color: red;
+    @include border-stroke(medium);
+  }
+
+
+  // for loop in sass
+  // @for $i from 1 through 12 means 1-12
+  @for $i from 1 through 12 {
+    .col-#{$i} { width: 100%/12 * $i; }
+  }
+
+  @each $color in blue, red, green {
+    .#{$color}-text {color: $color;}
+  }
+
+  //while @for $i from 1 to 12 means 1-11.
+
+  ```
+  The `#{$i} `or `#{$color}` part is the syntax to combine a variable (i) with text to make a string
+
+  The `extend` directive is a simple way to reuse the rules written for one element, then add more for another.
+  ```CSS
+  .panel{
+    background-color: red;
+    height: 70px;
+    border: 2px solid green;
+  }
+  .big-panel{
+    @extend .panel;
+    width: 150px;
+    font-size: 2em;
+  }
+  ```
 ### Continued development
 -  `Junior` challenges 
 
