@@ -252,6 +252,11 @@ My final goal is to tackle at least the `advanced` level project.
     font-size: 2em;
   }
   ```
+
+
+  Start react tutorial from [official website](https://reactjs.org/tutorial/tutorial.html).Concepts:
+    `component`,`props`,`render`
+    
 ### Continued development
 -  `Junior` challenges 
 
