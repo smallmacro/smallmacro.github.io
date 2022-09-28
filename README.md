@@ -46,7 +46,23 @@ npx tailwindcss -o build.css --minify
 ```
 
 Question:
-efficient workflow when `tailwindcss` working with figma design system
+
+- background image position issues , can't put it in the right place.
+- mix blend mode for display the button and the text color
+- calulate the sibling element's height and set its margin top to negative value
+
+- Pro plan background image position (same with sign up form background image)
+  - `backgroud position` and `background size`
+
+## TO Do NEXT
+
+- Price plans display with input date
+  - TS type
+- Footer component
+
+## One more thing
+
+How is the efficient workflow when `tailwindcss` working with figma design draft
 
 ## Author
 
