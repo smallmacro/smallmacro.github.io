@@ -1,0 +1,28 @@
+@import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+#root {
+  font-family: "Kumbh Sans", sans-serif;
+  --primary-blue: #5175ff;
+  --secondary-blue: #829cff;
+  --warn-red: #f05b5b;
+  --black-text: #333950;
+  --gray-text: #747b95;
+  --black-bg: #25293a;
+  --whole-bg: #fafafa;
+}
+
+@layer components {
+  .btn-primaryblue {
+    @apply bg-primaryblue py-3 px-14 rounded-[28px] leading-7 text-white font-bold flex mx-auto hover:bg-secondaryblue;
+  }
+  .btn-grayblue {
+    @apply bg-primaryblue py-3 px-14 rounded-[28px] leading-7 text-primaryblue mix-blend-normal opacity-10 font-bold flex mx-auto hover:opacity-25;
+  }
+  .btn-whiteblue {
+    @apply bg-white py-3 px-14 rounded-[28px] leading-7 text-primaryblue font-bold flex mx-auto hover:text-secondaryblue;
+  }
+}
