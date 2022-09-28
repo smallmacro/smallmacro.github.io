@@ -18,6 +18,9 @@ module.exports = {
         blackbg:"var(--black-bg)",
         wholebg:"var(--whole-bg)",
       },
+      letterSpacing:{
+        extrawide: "0.4rem",
+      },
       backgroundImage: {
         "header-pattern": "url(./assets/home/bg-pattern-header.svg)",
         "footer-pattern": "url(./assets/home/bg-pattern-footer.svg)",

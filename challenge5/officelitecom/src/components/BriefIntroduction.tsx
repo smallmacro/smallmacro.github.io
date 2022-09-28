@@ -7,21 +7,21 @@ import illustrationChart from '../assets/home/illustration-charts.svg';
 
 const BriefIntroduction = () => {
   return (
-    <section className='w-full flex flex-col max-w-[1280px] my-0 mx-auto'>
-      <div className=' flex  my-12 mx-auto justify-center md:justify-start md:ml-10 md:my-[6rem] xl:ml-[165px]'>
+    <section className='w-full flex flex-col max-w-[1110px] gap-y-8 my-0 mx-auto md:items-start'>
+      <div className=' flex flex-row my-12 mx-auto md:my-[6rem] xl:mx-0 '>
         <LogoName />
         
       </div>
-      <div className='flex flex-col mx-6  md:flex-row-reverse md:mx-10 xl:ml-[165px]'>
-          <div className='md:flex-1'>
+      <div className='flex flex-col mx-6 gap-y-8 md:flex-row-reverse md:mx-10 xl:mx-0 '>
+          <div className='md:flex-1 md:my-auto'>
             <img src={illustrationChart} className="w-[171px] h-[192px] my-0 mx-auto flex md:w-[281px] md:h-[314px] xl:w-[475px] xl:h-[531px] " alt="price chart" />
           </div>
           
-          <div className='flex flex-col justify-center md:flex-1'>
+          <div className='flex flex-col justify-center gap-y-6 md:flex-1 xl:items-start'>
             <h2 className='font-bold text-[40px] text-blacktext leading-[48px] xl:text-[56px] xl:leading-[64px]'>A simple solution to complex tasks is coming soon</h2>
-            <p className='my-8 text-center text-graytext xl:text-[18px]'>Say goodbye to inefficient juggling of multiple apps, teams, and projects. Officelite is the new 
+            <p className='my-8 text-center text-graytext xl:text-lg xl:text-left'>Say goodbye to inefficient juggling of multiple apps, teams, and projects. Officelite is the new 
             collaboration platform built with an intuitive interface to improve productivity.</p>
-            <button className='btn-primaryblue'>Get Started</button>
+            <button className='btn-primaryblue xl:mx-0'>Get Started</button>
           </div>
       </div>
 

@@ -2,6 +2,7 @@ import { useState } from 'react'
 // import reactLogo from './assets/react.svg'
 import './App.css'
 import BriefIntroduction from './components/BriefIntroduction'
+import Footer from './components/Footer'
 import PriceOptions from './components/PriceOptions'
 
 
@@ -32,6 +33,7 @@ function App() {
     <main className='w-full flex flex-col bg-wholebg md:flex-col '>
       <BriefIntroduction />
       <PriceOptions plans={plans}/>
+      <Footer />
     </main>
   )
 }
