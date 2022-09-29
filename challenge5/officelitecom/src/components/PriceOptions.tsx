@@ -20,7 +20,7 @@ const Card = ({plan} : CardProps) => {
   })
   const bgColor = plan.planName.toLowerCase() === "pro" ? 'bg-primaryblue  bg-pricing-pattern bg-auto bg-bottom bg-no-repeat text-white md:bg-right xl:bg-bottom': 'bg-white' ;
   const featureColor = plan.planName.toLowerCase() === "pro" ? 'text-white opacity-75': 'text-graytext';
-  const btnBg = plan.planName.toLowerCase() === "pro" ? 'bg-white opacity-100 ' : '';
+  const btnBg = plan.planName.toLowerCase() === "pro" ? 'btn-whiteblue ' : 'btn-grayblue';
   return (
     <div className={`grid grid-cols-1 justify-center py-10 mx-6 text-blacktext rounded-[13px] md:mx-10 md:grid-cols-2  md:gap-y-2 md:gap-x-8  xl:grid-cols-1 xl:mx-0 ${bgColor}`} >
       <div className='flex flex-col mx-auto text-center md:row-span-3 md:text-left xl:grid-row-1 xl:text-center'>
@@ -33,7 +33,7 @@ const Card = ({plan} : CardProps) => {
       <ul className={`my-8 mx-auto text-center md:row-span-4  md:text-left xl:grid-row-1 xl:text-center  ${featureColor}`}>
         {featuresMarkUp}
       </ul>
-      <button className={`btn-grayblue md:row-span-1 md:px-10 xl:grid-row-1 xl:text-center ${btnBg}`}>Try for free</button>
+      <button className={`${btnBg} md:row-span-1 md:px-10 xl:grid-row-1 xl:text-center `}>Try for free</button>
     </div>
   )
 }
@@ -47,7 +47,7 @@ const PriceOptions = ({plans}: OptionsProps) => {
     )
   })
   return (
-    <section className='w-full flex flex-col my-[100px] mx-auto gap-y-8 max-w-[1110px] xl:flex-row xl:gap-x-10 '>
+    <section className='w-full flex flex-col my-[100px] mx-auto gap-y-8 max-w-[1110px] xl:flex-row xl:gap-x-10 relative h-full  z-10'>
       {plansMarkUp}
     </section>
     

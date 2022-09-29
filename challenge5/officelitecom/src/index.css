@@ -13,6 +13,9 @@
   --gray-text: #747b95;
   --black-bg: #25293a;
   --whole-bg: #fafafa;
+  --gray-blue-15: rgba(81, 117, 255, 0.15);
+  --gray-blue-25: rgba(81, 117, 255, 0.25);
+  --gray-blue-10: rgba(81, 117, 255, 0.1);
 }
 
 @layer components {
@@ -20,7 +23,7 @@
     @apply bg-primaryblue py-3 px-14 rounded-[28px] leading-7 text-white font-bold flex mx-auto hover:bg-secondaryblue;
   }
   .btn-grayblue {
-    @apply bg-primaryblue py-3 px-14 rounded-[28px] leading-7 text-primaryblue mix-blend-normal opacity-10 font-bold flex mx-auto hover:opacity-25;
+    @apply bg-grayblue15 py-3 px-14 rounded-[28px] leading-7 text-primaryblue  font-bold flex mx-auto hover:bg-grayblue25;
   }
   .btn-whiteblue {
     @apply bg-white py-3 px-14 rounded-[28px] leading-7 text-primaryblue font-bold flex mx-auto hover:text-secondaryblue;

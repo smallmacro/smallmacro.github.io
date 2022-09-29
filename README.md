@@ -28,6 +28,9 @@
   $ npm create vite@latest $project_name --template react-ts
   ```
 
+- Tailwind Css
+- React Router
+
 ### What I learned
 
 `rafce` short cut to init a React functional component
@@ -49,16 +52,18 @@ Question:
 
 - background image position issues , can't put it in the right place.
 - mix blend mode for display the button and the text color
+  - fix it by using the `rgba(r,g,b, opcacity)`,seperate the text from background color
 - calulate the sibling element's height and set its margin top to negative value
-
+  - fix it by setting background image container to `position:absolute ` and its parent element to `position:relative`
 - Pro plan background image position (same with sign up form background image)
   - `backgroud position` and `background size`
 
-## TO Do NEXT
+## TO DO NEXT
 
-- Price plans display with input date
-  - TS type
-- Footer component
+- Price plans display with input date. done
+  - TS type. done
+- Footer component done.
+- Form component.
 
 ## One more thing
 
