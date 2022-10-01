@@ -1,5 +1,6 @@
 import React from 'react'
 import CountDown from '../components/CountDown'
+import Form from '../components/Form'
 import LogoName from '../components/LogoName'
 
 function SignUp() {
@@ -10,7 +11,7 @@ function SignUp() {
             <LogoName />
           </div>
           
-          <div className='flex flex-col justify-center gap-y-6 md:flex-1 xl:items-start'>
+          <div className='flex flex-col justify-center gap-y-6 md:flex-1 xl:items-start  mx-6   md:mx-10 xl:mx-0'>
             <h2 className='font-bold text-[40px] text-blacktext text-center leading-[48px] xl:text-[56px] xl:leading-[64px] xl:text-left'>Work smarter. Save time.</h2>
             <p className='my-8 text-center text-graytext xl:text-lg xl:text-left'>Easily manage your projects. Get on the list and receive in-app perks available only to 
             early subscribers. We are moving into final development and getting ready for official launch soon.</p>
@@ -18,7 +19,9 @@ function SignUp() {
         
           <CountDown bgColor={'white'}/>
       </section>
-      
+      <section className='w-full flex flex-col max-w-[1110px]  my-0 mx-auto'>
+        <Form />
+      </section>
     </main>
   )
 }
