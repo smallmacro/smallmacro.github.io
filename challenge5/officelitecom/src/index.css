@@ -20,12 +20,12 @@
 
 @layer components {
   .btn-primaryblue {
-    @apply bg-primaryblue py-3 px-14 rounded-[28px] leading-7 text-white font-bold flex mx-auto hover:bg-secondaryblue;
+    @apply bg-primaryblue py-3 px-14 rounded-[28px] leading-7 text-white font-bold flex mx-auto cursor-pointer hover:bg-secondaryblue;
   }
   .btn-grayblue {
-    @apply bg-grayblue15 py-3 px-14 rounded-[28px] leading-7 text-primaryblue  font-bold flex mx-auto hover:bg-grayblue25;
+    @apply bg-grayblue15 py-3 px-14 rounded-[28px] leading-7 text-primaryblue  font-bold flex mx-auto cursor-pointer hover:bg-grayblue25;
   }
   .btn-whiteblue {
-    @apply bg-white py-3 px-14 rounded-[28px] leading-7 text-primaryblue font-bold flex mx-auto hover:text-secondaryblue;
+    @apply bg-white py-3 px-14 rounded-[28px] leading-7 text-primaryblue font-bold flex mx-auto cursor-pointer hover:text-secondaryblue;
   }
 }

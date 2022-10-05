@@ -21,7 +21,7 @@ const BriefIntroduction = () => {
             <h2 className='font-bold text-[40px] text-blacktext leading-[48px] xl:text-[56px] xl:leading-[64px]'>A simple solution to complex tasks is coming soon</h2>
             <p className='my-8 text-center text-graytext xl:text-lg xl:text-left'>Say goodbye to inefficient juggling of multiple apps, teams, and projects. Officelite is the new 
             collaboration platform built with an intuitive interface to improve productivity.</p>
-            <button className='btn-primaryblue xl:mx-0'>Get Started</button>
+            <button className='btn-primaryblue shadow-btn xl:mx-0'>Get Started</button>
           </div>
       </div>
 

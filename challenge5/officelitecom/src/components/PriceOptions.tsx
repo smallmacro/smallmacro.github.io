@@ -22,7 +22,7 @@ const Card = ({plan} : CardProps) => {
   const featureColor = plan.planName.toLowerCase() === "pro" ? 'text-white opacity-75': 'text-graytext';
   const btnBg = plan.planName.toLowerCase() === "pro" ? 'btn-whiteblue ' : 'btn-grayblue';
   return (
-    <div className={`grid grid-cols-1 justify-center py-10 mx-6 text-blacktext rounded-[13px] md:mx-10 md:grid-cols-2  md:gap-y-2 md:gap-x-8  xl:grid-cols-1 xl:mx-0 ${bgColor}`} >
+    <div className={`grid grid-cols-1 justify-center py-10 mx-6 text-blacktext rounded-[13px] shadow-3xl md:mx-10 md:grid-cols-2  md:gap-y-2 md:gap-x-8  xl:grid-cols-1 xl:mx-0 ${bgColor}`} >
       <div className='flex flex-col mx-auto text-center md:row-span-3 md:text-left xl:grid-row-1 xl:text-center'>
         <span className=' font-bold text-[20px]  my-10 md:my-2'>{plan.planName}</span>
         <span className=' font-bold text-[56px] leading-[64px]  mb-2'>{plan.price}</span>
