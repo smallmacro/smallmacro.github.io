@@ -20,7 +20,7 @@
 
 - [Challenge4: GitHub user search app challenge](https://smallmacro.github.io/challenge4/)
 
-- [Challenge5: Officelite coming soon site](https://smallmacro.github.io/challenge5/officelite/dist/)
+- [Challenge5: Officelite coming soon site](https://smallmacro.github.io/challenge5/dist/)
 
 ## Built with
 
