@@ -56,14 +56,38 @@ Question:
 - calulate the sibling element's height and set its margin top to negative value
   - fix it by setting background image container to `position:absolute ` and its parent element to `position:relative`
 - Pro plan background image position (same with sign up form background image)
+
   - `backgroud position` and `background size`
+
+- How to set the text color(`span`) inside a `select` `option`
+
+- form validation
+
+  - Useful article :[How to type a React form onSubmit handler](https://epicreact.dev/how-to-type-a-react-form-on-submit-handler/)
+
+  ```javascript
+  //custom interface for FormElements
+  interface FormElements extends HTMLFormControlsCollection {
+    name: HTMLInputElement,
+    email: HTMLInputElement,
+    plan: HTMLSelectElement,
+    phoneNo: HTMLInputElement,
+    company: HTMLInputElement,
+  }
+
+  interface CustomFormElements extends HTMLFormElement {
+    readonly elements: FormElements
+  }
+
+
+  ```
+
+  - simple email validation pattern: `/^\S+@\S+$/g`
 
 ## TO DO NEXT
 
-- Price plans display with input date. done
-  - TS type. done
-- Footer component done.
-- Form component.
+- custom-styled select form control in the sign-up form
+- live countdown timer
 
 ## One more thing
 
