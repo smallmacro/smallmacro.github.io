@@ -13,14 +13,6 @@ interface CustomFormElements extends HTMLFormElement {
   readonly elements: FormElements
 }
 
-// type FormInputs = {
-//   name: string;
-//   email: string;
-//   // selected: string;
-//   phoneNo: number | null;
-//   company: string | null;
-// }
-
 
 const Form = () => {
   
