@@ -50,6 +50,8 @@ content: [ "./src/**/*.{js,jsx,ts,tsx}"]
 npx tailwindcss -o build.css --minify
 ```
 
+`npm run build` run production use, but load a white page index with `css` and `js`file missing ;
+
 Question:
 
 - background image position issues , can't put it in the right place.
