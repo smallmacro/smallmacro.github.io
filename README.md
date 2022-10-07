@@ -52,6 +52,8 @@ npx tailwindcss -o build.css --minify
 
 `npm run build` run production use, but load a white page index with `css` and `js`file missing ;
 
+- It turns out you need to set basename path in `react-router-dom` and also in `vite config file` when deploy it to a github repo. It seems a bit late to learn that github pages really enable user to put multiple project, though so far they are all pure static websites.
+
 Question:
 
 - background image position issues , can't put it in the right place.
