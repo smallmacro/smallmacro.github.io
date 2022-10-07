@@ -20,7 +20,7 @@
 
 - [Challenge4: GitHub user search app challenge](https://smallmacro.github.io/challenge4/)
 
-- [Challenge5: Officelite coming soon site](https://smallmacro.github.io/challenge5/dist/)
+- [Challenge5: Officelite coming soon site](https://smallmacro.github.io/officelitecome/)
 
 ## Built with
 
@@ -87,6 +87,8 @@ Question:
   ```
 
   - simple email validation pattern: `/^\S+@\S+$/g`
+
+  - Deploy to Github Pages with white loading index page - unsolve problem
 
 ## TO DO NEXT
 
