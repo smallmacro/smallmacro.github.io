@@ -10,7 +10,7 @@ const BriefIntroduction = () => {
     <section className='w-full flex flex-col max-w-[1110px] gap-y-8 my-0 mx-auto bg-header-pattern bg-contain bg-top bg-no-repeat md:items-start md:bg-right'>
       <div className=' flex flex-row my-12 mx-auto  md:my-[4.5rem] md:mx-10 xl:mx-0 xl:my-[5.125rem]'>
         <LogoName />
-        
+        <h1 className='hidden'>Officelite</h1>
       </div>
       <div className='flex flex-col mx-6 gap-y-8 md:flex-row-reverse md:mx-10 xl:mx-0 '>
           <div className='md:flex-1 md:my-auto'>
