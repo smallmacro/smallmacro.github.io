@@ -1,6 +1,8 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: [],
+  content: [
+    "./src/**/*.{js,jsx,ts,tsx}"
+  ],
   theme: {
     extend: {
       fontFamily: {
@@ -19,9 +21,19 @@ module.exports = {
         btnbgdarkmode: "rgba(255,255,255, 0.1)",
         btnbgdarkhover: "rgba(255,255,255, 0.35)",
 
+      },
+      backgroundImage:{
+        "mobile-header": "url('./assets/mobile/bg-pattern-header.svg')",
+        "tablet-header": "url('./assets/tablet/bg-pattern-header.svg')",
+        "desktop-header": "url('./assets/desktop/bg-pattern-header.svg')",
+        "icon-sun": "url('./assets/desktop/icon-sun.svg')",
+        "icon-moon": "url('./assets/desktop/icon-moon.svg')",
+        "icon-check": "url('./assets/desktop/icon-check.svg')",
+
+        
       }
     },
   },
   plugins: [],
-  darkMode: 'class',
+  darkMode: 'class', //manually monitor the preference
 }
