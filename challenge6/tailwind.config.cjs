@@ -20,6 +20,7 @@ module.exports = {
         btnbgviolet: "rgba(89, 100, 224,0.35)",
         btnbgdarkmode: "rgba(255,255,255, 0.1)",
         btnbgdarkhover: "rgba(255,255,255, 0.35)",
+        bgmodal: "rgba(0,0,0, 0.5)",
 
       },
       backgroundImage:{
@@ -29,7 +30,9 @@ module.exports = {
         "icon-sun": "url('./assets/desktop/icon-sun.svg')",
         "icon-moon": "url('./assets/desktop/icon-moon.svg')",
         "icon-check": "url('./assets/desktop/icon-check.svg')",
-
+        "icon-filter": "url('./assets/mobile/icon-filter.svg')",
+        "icon-search": "url('./assets/desktop/icon-search.svg')",
+        "icon-location": "url('./assets/desktop/icon-location.svg')",
         
       }
     },

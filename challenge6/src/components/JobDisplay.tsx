@@ -2,7 +2,9 @@ import React from 'react'
 
 const JobDisplay = () => {
   return (
-    <div>JobDisplay</div>
+    <div className='grid'>
+      JobDisplay
+    </div>
   )
 }
 
