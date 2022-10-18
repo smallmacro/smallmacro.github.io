@@ -3,7 +3,7 @@ import Logo from './Logo'
 
 const Banner = () => {
   return (
-    <div className='flex flex-row px-6 py-9 justify-between '>
+    <div className=' flex flex-row mx-6 py-9 md:mx-10 max-w-[1110px] xl:mx-auto justify-between xl:px-0'>
       <Logo />
       <div className='flex flex-row gap-x-4 items-center'>
         <span className='block bg-icon-sun w-[20px] h-[20px]'></span>

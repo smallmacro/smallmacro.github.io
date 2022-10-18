@@ -9,7 +9,7 @@ const SearchForm = () => {
   }
   return (
     <>
-    <form className='h-[5rem] bg-white -mt-10 rounded-md flex flex-row justify-around items-center md:px-6 md:justify-between' action="" method="post">
+    <form className='h-[5rem] bg-white -mt-10 rounded-md flex flex-row pl-6 pr-4 justify-between items-center md:px-6 ' action="" method="post">
       <label htmlFor="title" className='flex flex-row  md:gap-x-4 md:py-7 md:border-r md:border-darkgrayop20 '>
         <span className='hidden md:block bg-icon-search w-6 h-6 '></span>
         <input type="text" name="title" id="title" placeholder='Filter by title,companies,expertise...' className='text-darkblue dark:text-white placeholder:text-darkblueop50 placeholder:dark:text-white focus:ring-0'/>
