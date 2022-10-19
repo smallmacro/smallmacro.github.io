@@ -42,6 +42,6 @@ module.exports = {
       }
     },
   },
-  plugins: [],
+  plugins: [require("@tailwindcss/forms")],
   darkMode: 'class', //manually monitor the preference
 }
