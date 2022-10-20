@@ -1,4 +1,5 @@
 import React from 'react'
+import JobInfo from './JobInfo'
 
 const JobDisplay = () => {
 
@@ -68,8 +69,10 @@ const JobDisplay = () => {
   ]
   
   return (
-    <div className='grid'>
-      JobDisplay
+    <div className='grid grid-cols-1 mt-[57px] mb-8 gap-y-[49px] md:mb-14 md:grid-cols-2 md:gap-y-[65px] md:gap-x-[11px] md:mt-[70px] xl:grid-cols-3 xl:mt-[105px] xl:gap-x-[30px]'>
+      <JobInfo />
+      <JobInfo />
+      <JobInfo />
     </div>
   )
 }
