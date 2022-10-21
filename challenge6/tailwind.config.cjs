@@ -25,7 +25,7 @@ module.exports = {
         darkblueop50: "rgba(25,32,45,0.5)",
         whiteop10: "rgba(0,0,0, 0.1)",
         darkgrayop20: "rgba(110,128, 152, 0.2)",
-
+        voiletop10: "rgba(89, 100, 224, 0.1)",
 
       },
       backgroundImage:{

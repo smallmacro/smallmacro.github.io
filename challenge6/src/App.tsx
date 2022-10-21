@@ -3,6 +3,7 @@ import { useState } from 'react'
 
 
 import Home from './pages/Home'
+import Jobs from './pages/Jobs'
 
 
 function App() {
@@ -11,7 +12,7 @@ function App() {
   return (
     <>
     
-    <Home />
+    <Jobs/>
 
 
     </>
