@@ -6,7 +6,7 @@
 
 #root {
   font-family: "Kumbh Sans", sans-serif;
-  @apply bg-lightgray dark:bg-darkblue relative;
+  @apply bg-lightgray dark:bg-midnight relative;
 }
 
 @layer components {

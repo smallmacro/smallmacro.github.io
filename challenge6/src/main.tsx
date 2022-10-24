@@ -3,11 +3,34 @@ import ReactDOM from 'react-dom/client'
 import App from './App'
 import './index.css'
 
-import {RouterProvider} from 'react-router-dom'
+import {
+  RouterProvider,
+  createBrowserRouter,
+  Route,
+  Link,
+  createRoutesFromElements
+} from 'react-router-dom'
+import Home from './pages/Home'
+import Jobs from './pages/Jobs'
 
+const router =  createBrowserRouter(
+  [
+    {
+      path:"/",
+      element:  <Home />,
+      loader: async () => {
+        return fetch("./data.json");
+      }
+    },
+    {
+      path: '/jobs',
+      element: <Jobs />
+    }
+  ]
+);
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
-    <App />
+    <RouterProvider router={router} />
     
   </React.StrictMode>
 )
