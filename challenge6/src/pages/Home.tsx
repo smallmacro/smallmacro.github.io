@@ -3,10 +3,13 @@ import { useLoaderData } from 'react-router-dom'
 import Banner from '../components/Banner'
 import JobBoard from '../components/JobBoard'
 
-
+export type CompanyInfo = {
+  
+}
 const Home = () => {
   const data = useLoaderData();
   console.log(data);
+
   return (
     <>
     

@@ -1,8 +1,12 @@
 import React from 'react'
 
 const ModalForm = () => {
+  const handleModalSubmit = (event: React.FormEvent<HTMLElement>) => {
+    event.preventDefault();
+    
+  }
   return (
-    <form action="" className='bg-white dark:bg-darkblue  w-full mx-6  flex flex-col  rounded-md max-h-[217px]'>
+    <form action="" className='bg-white dark:bg-darkblue  w-full mx-6  flex flex-col  rounded-md max-h-[217px]' onSubmit={handleModalSubmit}  onClick={(event) => event.stopPropagation() }>
       <label htmlFor="location"  className='flex flex-row gap-x-4 px-6 py-6 border-darkgrayop20 border-b items-center'>
         <span className='block bg-icon-location w-[17px] h-6'></span>
         <input type="text" placeholder='Filter by location...' className='border-0 focus:ring-0 text-base placeholder:opacity-50 px-0 py-0'/>
