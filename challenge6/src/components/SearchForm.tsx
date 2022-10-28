@@ -3,13 +3,16 @@ import ModalForm from './ModalForm'
 
 const SearchForm = () => {
 
-  const [displayModal, setDispalyModal] = useState(false);
-  const handleSubmit = (event) => {
-    event.preventDeafault();
+  const [displayModal, setDispalyModal] = useState(true);
+  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    //do something
+    console.log("Here")
+
   }
   return (
     <>
-    <form className='h-[5rem] bg-white dark:bg-darkblue -mt-10 rounded-md flex flex-row pl-6 pr-4 justify-between md:gap-x-4 xl:gap-x-6 items-center md:px-6  ' action="" method="post">
+    <form className='h-[5rem] bg-white dark:bg-darkblue -mt-10 rounded-md flex flex-row pl-6 pr-4 justify-between md:gap-x-4 xl:gap-x-6 items-center md:px-6  '  method="post" onSubmit={handleSubmit}>
       <label htmlFor="title" className='flex flex-row md:items-center md:gap-x-4 md:flex-1 md:py-5 md:border-r md:border-darkgrayop20 '>
         <span className='hidden md:block bg-icon-search w-6 h-6  '></span>
         <input type="text" name="title" id="title" placeholder='Filter by title,companies,expertise...' className='appearance-none  border-0 text-darkblue  placeholder:text-darkblueop50   dark:bg-darkblue dark:text-whiteop50 dark:placeholder:text-whiteop50 focus:ring-0 md:px-0 md:max-w-[168px] xl:max-w-[275px] xl:w-[80%]'/>
@@ -28,7 +31,7 @@ const SearchForm = () => {
       </label>
 
       <label htmlFor="search" className='bg-voilet w-12 h-12 rounded-[5px] cursor-pointer md:basis-20  md:flex md:justify-center md:items-center xl:basis-[123px]'>
-        <button type="submit" title='search' name='search' className='flex' onSubmit={handleSubmit}>
+        <button type="submit" title='search' name='search' className='flex' onClick={() => setDispalyModal(!displayModal)}>
           <svg width="24" height="24" className=" fill-white w-5 h-5 mx-3.5 my-3.5 md:hidden"  xmlns="http://www.w3.org/2000/svg"><path d="M17.112 15.059h-1.088l-.377-.377a8.814 8.814 0 002.15-5.784A8.898 8.898 0 008.898 0 8.898 8.898 0 000 8.898a8.898 8.898 0 008.898 8.899c2.211 0 4.23-.808 5.784-2.143l.377.377v1.081l6.845 6.832 2.04-2.04-6.832-6.845zm-8.214 0A6.16 6.16 0 118.9 2.737a6.16 6.16 0 010 12.322z"  fillRule="nonzero"/></svg>
           <span className='hidden md:block md:text-white'>Search</span>
         </button>
@@ -36,7 +39,7 @@ const SearchForm = () => {
       
     </form>
     {displayModal && 
-      <div className='flex absolute top-0 left-0 bg-bgmodal w-full h-screen  items-center '>
+      <div className='flex absolute top-0 left-0 bg-bgmodal w-full h-full z-10 items-center '>
         <ModalForm />
       </div>
     } 
