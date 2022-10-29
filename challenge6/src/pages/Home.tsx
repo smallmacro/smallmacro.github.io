@@ -30,10 +30,11 @@ export type JobInfo = {
   role: Role;
 }
 
+export const JobContext = createContext<Array<CompanyInfo&JobInfo> | null>(null);
 const Home = () => {
   const data = useLoaderData() as Array<CompanyInfo&JobInfo>| null;
  
-  const JobContext = createContext<Array<CompanyInfo&JobInfo> | null>(null);
+  
 
   return (
     <>

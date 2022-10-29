@@ -1,10 +1,13 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import { JobContext } from '../pages/Home'
 import JobDisplay from './JobDisplay'
 import LoadMore from './LoadMore'
 
 import SearchForm from './SearchForm'
 
 const JobBoard = () => {
+  const jobsData = useContext(JobContext);
+  console.log(jobsData);
   return (
     <main>
       
