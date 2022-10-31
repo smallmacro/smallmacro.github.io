@@ -6,7 +6,7 @@ export type DisplayInfo = {
   companyInfo: CompanyInfoType[]| undefined;
 }
 
-const JobDisplay = ({companyInfo} :DisplayInfo) => {
+const JobList = ({companyInfo} :DisplayInfo) => {
 
   const jobUnitMarkUp = companyInfo?.map( (info ,index) => {
     return (
@@ -24,4 +24,4 @@ const JobDisplay = ({companyInfo} :DisplayInfo) => {
   )
 }
 
-export default JobDisplay
+export default JobList

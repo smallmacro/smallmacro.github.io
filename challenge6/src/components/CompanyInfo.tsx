@@ -1,6 +1,9 @@
 import React from 'react'
 
+
 const CompanyInfo = () => {
+
+	
   return (
     <div className='flex flex-col gap-y-6 bg-white items-center  dark:bg-darkblue rounded-md  -mt-[15px] pb-8 md:flex-row md:-mt-[40px] md:pb-0'>
 		<div className='w-[50px] h-[50px] -mt-[25px]  bg-orange-500 rounded-[15px] md:w-[140px] md:h-[140px] md:mt-0 md:rounded-none md:rounded-bl-md'>

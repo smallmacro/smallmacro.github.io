@@ -1,6 +1,7 @@
 import React, { useContext } from 'react'
 import { JobContext } from '../pages/Home'
-import JobDisplay from './JobDisplay'
+import JobList from './JobList'
+
 import LoadMore from './LoadMore'
 
 import SearchForm from './SearchForm'
@@ -38,7 +39,7 @@ const JobBoard = () => {
     <section className=' flex-col mx-6 md:mx-10 max-w-[1110px] xl:mx-auto'>
       <SearchForm />
       
-      <JobDisplay companyInfo={comInfo}/>
+      <JobList companyInfo={comInfo}/>
       <LoadMore />
 
     </section>

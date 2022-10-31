@@ -24,7 +24,10 @@ const router =  createBrowserRouter(
     },
     {
       path: '/jobs',
-      element: <Jobs />
+      element: <Jobs />,
+      loader:async () => {
+        return fetch("./data.json");
+      }
     }
   ]
 );
