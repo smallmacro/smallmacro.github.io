@@ -7,14 +7,38 @@ import SearchForm from './SearchForm'
 
 const JobBoard = () => {
   const jobsData = useContext(JobContext);
-  console.log(jobsData);
+  let comInfo = jobsData?.map( job => {
+    const {
+      id,
+      company,
+      logo,
+      logoBackground,
+      position,
+      postedAt,
+      contract,
+      location
+    }
+     = job;
+    
+
+     return {
+      id,
+      company,
+      logo,
+      logoBackground,
+      position,
+      postedAt,
+      contract,
+      location
+    };
+  })
   return (
     <main>
       
     <section className=' flex-col mx-6 md:mx-10 max-w-[1110px] xl:mx-auto'>
       <SearchForm />
       
-      <JobDisplay />
+      <JobDisplay companyInfo={comInfo}/>
       <LoadMore />
 
     </section>

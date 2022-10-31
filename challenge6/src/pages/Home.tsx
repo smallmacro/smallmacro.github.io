@@ -3,36 +3,37 @@ import { useLoaderData } from 'react-router-dom'
 import Banner from '../components/Banner'
 import JobBoard from '../components/JobBoard'
 
-export type CompanyInfo = {
+export type CompanyInfoType = {
+  id: number;
   company: string;
-  logo: SVGElement;
+  logo: string;
   logoBackground: string;
   position: string;
   postedAt: string;
   contract: string;
   location: string;
 }
-export type Requirement = {
+export type RequirementType = {
   content: string;
   items: Array<string>
 }
-export type Role = {
+export type RoleType = {
   content: string;
   items: Array<string>
 }
 
-export type JobInfo = {
+export type JobInfoType = {
   id: number;
   website: string;
   apply : string;
   description:string;
-  requirements: Requirement;
-  role: Role;
+  requirements: RequirementType;
+  role: RoleType;
 }
 
-export const JobContext = createContext<Array<CompanyInfo&JobInfo> | null>(null);
+export const JobContext = createContext<Array<CompanyInfoType&JobInfoType> | null>(null);
 const Home = () => {
-  const data = useLoaderData() as Array<CompanyInfo&JobInfo>| null;
+  const data = useLoaderData() as Array<CompanyInfoType&JobInfoType>| null;
  
   
 
