@@ -16,7 +16,7 @@ const Banner = () => {
   }, [localStorage, checked])
   
   return (
-    <header className='w-full h-[136px]  bg-mobile-header bg-no-repeat md:bg-tablet-header md:h-[160px] bg-cover xl:bg-desktop-header xl:h-[162px] '>
+    <header className='w-full h-[136px]  bg-mobile-header bg-no-repeat md:bg-tablet-header md:h-[160px] bg-cover xl:bg-desktop-header xl:h-[162px]  '>
     <div className=' flex flex-row mx-6 py-9 md:mx-10 max-w-[1110px] xl:mx-auto justify-between xl:px-0'>
       <Logo />
       <div className='flex flex-row gap-x-4 items-center'>

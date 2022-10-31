@@ -23,9 +23,10 @@ const Jobs = () => {
 	
 		<JobIdInfoContext.Provider value={jobUnit} >
 			<JobInfo />
+			<Footer />
 		</JobIdInfoContext.Provider>
 		
-		<Footer />
+		
 	</>
   )
 }

@@ -26,7 +26,7 @@ const router =  createBrowserRouter(
       path: '/jobs',
       element: <Jobs />,
       loader:async () => {
-        return fetch("./data.json");
+        return fetch("./data.json");//this loader function will only return a singal job description in the end;
       }
     }
   ]
