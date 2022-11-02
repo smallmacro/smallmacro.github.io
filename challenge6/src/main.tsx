@@ -10,7 +10,7 @@ import {
   Link,
   createRoutesFromElements
 } from 'react-router-dom'
-import Home from './pages/Home'
+import Home, { homeLoader } from './pages/Home'
 import Jobs from './pages/Jobs'
 
 const router =  createBrowserRouter(
@@ -18,9 +18,7 @@ const router =  createBrowserRouter(
     {
       path:"/",
       element:  <Home />,
-      loader: async () => {
-        return fetch("./data.json");
-      }
+      loader: homeLoader
     },
     {
       path: '/jobs',

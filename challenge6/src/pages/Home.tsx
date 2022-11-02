@@ -31,12 +31,13 @@ export type JobInfoType = {
   role: RoleType;
 }
 
+export async function homeLoader(){
+  return fetch("./data.json");//this loader function will only return a singal job description in the end;
+}
+
 export const JobContext = createContext<Array<CompanyInfoType&JobInfoType> | null>(null);
 const Home = () => {
   const data = useLoaderData() as Array<CompanyInfoType&JobInfoType>| null;
- 
-  
-
   return (
     <>
     
