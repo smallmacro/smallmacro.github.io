@@ -1,0 +1,22 @@
+@import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+#root {
+  font-family: "Kumbh Sans", sans-serif;
+  @apply bg-lightgray dark:bg-midnight relative;
+}
+
+@layer components {
+  .btn-voilet {
+    @apply bg-violet text-white rounded-[5px] px-4 py-10 text-base font-bold hover:bg-lightviolet;
+  }
+  .btn-gray {
+    @apply bg-btnbggray text-violet rounded-[5px] px-4 py-10 text-base font-bold hove:bg-btnbgviolet;
+  }
+  .btn-darkmode {
+    @apply bg-btnbgdarkmode text-white rounded-[5px] px-4 py-10 text-base font-bold hover:bg-btnbgdarkhover;
+  }
+}
