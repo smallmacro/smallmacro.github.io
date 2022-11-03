@@ -1,19 +1,29 @@
+import axios from 'axios'
 import React, { createContext } from 'react'
-import { useLoaderData } from 'react-router-dom'
+import { LoaderFunction, useLoaderData } from 'react-router-dom'
 import Banner from '../components/Banner'
 import Footer from '../components/Footer'
 import JobInfo from '../components/JobInfo'
 import { CompanyInfoType,JobInfoType } from './Home'
 
+const api = "http://localhost:3000/api/jobs/";
 export const JobIdInfoContext = createContext<CompanyInfoType&JobInfoType | null>(null);
 export type JobUnitType = {
 
 }
 
-const Jobs = () => {
-	const data = useLoaderData() as Array<CompanyInfoType&JobInfoType> | null;
+export const jobLoader:LoaderFunction =  async ({ params }) => {
+	const url = api + params.id;
+	console.log(url);
+	return axios.get(url).then(res => {
+		return res.data;
+	})
+}
 
-	let jobUnit:CompanyInfoType&JobInfoType | null= data === null ? null : data[0];
+
+const Jobs = () => {
+	const jobUnit = useLoaderData() as CompanyInfoType&JobInfoType | null;
+	
 
 
   return (

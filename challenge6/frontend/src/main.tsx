@@ -11,21 +11,22 @@ import {
   createRoutesFromElements
 } from 'react-router-dom'
 import Home, { homeLoader } from './pages/Home'
-import Jobs from './pages/Jobs'
+import Jobs, { jobLoader } from './pages/Jobs'
+import ErrorBoundary from './components/ErrorBoundary'
 
 const router =  createBrowserRouter(
   [
     {
       path:"/",
       element:  <Home />,
-      loader: homeLoader
+      loader: homeLoader,
+      errorElement: <ErrorBoundary />
     },
     {
-      path: '/jobs',
+      path: '/jobs/:id',
       element: <Jobs />,
-      loader:async () => {
-        return fetch("./data.json");//this loader function will only return a singal job description in the end;
-      }
+      loader: jobLoader,
+      errorElement: <ErrorBoundary />
     }
   ]
 );

@@ -1,8 +1,10 @@
+import axios from 'axios';
 import React, { createContext } from 'react'
-import { useLoaderData } from 'react-router-dom'
+import { LoaderFunction, useLoaderData } from 'react-router-dom'
 import Banner from '../components/Banner'
 import JobBoard from '../components/JobBoard'
 
+const URL = "http://localhost:3000/api/jobs";
 export type CompanyInfoType = {
   id: number;
   company: string;
@@ -31,8 +33,11 @@ export type JobInfoType = {
   role: RoleType;
 }
 
-export async function homeLoader(){
-  return fetch("./data.json");//this loader function will only return a singal job description in the end;
+export const homeLoader:LoaderFunction = async() =>{
+  return axios.get(URL).then(res => {
+    
+    return res.data;
+  });//this loader function will only return a singal job description in the end;
 }
 
 export const JobContext = createContext<Array<CompanyInfoType&JobInfoType> | null>(null);

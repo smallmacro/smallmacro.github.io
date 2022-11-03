@@ -4,9 +4,12 @@ let jobs = JSON.parse(rawData)
 
 const express = require('express')
 const app = express()
-
+const cors = require('cors');
 const PORT = process.env.PORT || 3000;
+app.use(cors())
 app.use(express.json())
+
+
 
 
 app.get("/", (request, response) => {
@@ -14,7 +17,7 @@ app.get("/", (request, response) => {
 })
 
 app.get("/api/jobs", (request, response) => {
-  
+  // response.header("Access-Control-Allow-Origin", "*")
   response.json(jobs);
 });
 app.get("/api/jobs/:id",(request, response) =>{

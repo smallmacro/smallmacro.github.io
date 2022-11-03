@@ -8,6 +8,7 @@ import SearchForm from './SearchForm'
 
 const JobBoard = () => {
   const jobsData = useContext(JobContext);
+  
   let comInfo = jobsData?.map( job => {
     const {
       id,
