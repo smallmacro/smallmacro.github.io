@@ -14,7 +14,7 @@ export type JobUnitType = {
 
 export const jobLoader:LoaderFunction =  async ({ params }) => {
 	const url = api + params.id;
-	console.log(url);
+	
 	return axios.get(url).then(res => {
 		return res.data;
 	})
