@@ -17,6 +17,8 @@ export const jobLoader:LoaderFunction =  async ({ params }) => {
 	
 	return axios.get(url).then(res => {
 		return res.data;
+	}).catch(err => {
+		console.error(err);
 	})
 }
 

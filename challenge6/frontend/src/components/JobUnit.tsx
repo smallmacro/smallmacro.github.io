@@ -12,7 +12,7 @@ const JobUnit = ({info}:JobUnitType) => {
   return (
     <Link className='relative block pt-[49px] pl-8 pb-8 rounded-md bg-white dark:bg-darkblue pr-[9px] md:pr-[27px] xl:pr-8 ' to={baseUrl+info.id}>
       <div className={`w-[50px] h-[50px]  rounded-[15px] absolute -top-[25px] left-8 flex items-center justify-center`} style={{"backgroundColor":`${info.logoBackground}`}}>
-        <img src={`/src/${info.logo.slice(2)}`} alt='logo' className={``}/>
+        <img src={`/${info.logo.slice(9)}`} alt='logo' className={``}/>
       </div>
       <div className='flex flex-col text-darkgray'>
         <p className='mb-4'> <span>{info.postedAt}</span> <span className='mx-3 font-bold'>•</span><span>{info.contract}</span></p>

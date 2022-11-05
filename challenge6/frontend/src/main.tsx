@@ -29,9 +29,7 @@ const router =  createBrowserRouter(
       errorElement: <ErrorBoundary />
     }
   ],
-  {
-    basename: "/devjobs/"
-  }
+  
 );
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>

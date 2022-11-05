@@ -37,7 +37,9 @@ export const homeLoader:LoaderFunction = async() =>{
   return axios.get(URL).then(res => {
     
     return res.data;
-  });//this loader function will only return a singal job description in the end;
+  }).catch(err => {
+		console.error(err);
+	});
 }
 
 export const JobContext = createContext<Array<CompanyInfoType&JobInfoType> | null>(null);
