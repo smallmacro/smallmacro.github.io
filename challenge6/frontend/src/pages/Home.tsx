@@ -4,7 +4,7 @@ import { LoaderFunction, useLoaderData } from 'react-router-dom'
 import Banner from '../components/Banner'
 import JobBoard from '../components/JobBoard'
 
-const URL = "http://localhost:3000/api/jobs";
+const URL = "https://devjobs.fly.dev/api/jobs";
 export type CompanyInfoType = {
   id: number;
   company: string;

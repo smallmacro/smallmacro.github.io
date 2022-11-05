@@ -6,7 +6,7 @@ import Footer from '../components/Footer'
 import JobInfo from '../components/JobInfo'
 import { CompanyInfoType,JobInfoType } from './Home'
 
-const api = "http://localhost:3000/api/jobs/";
+const api = "https://devjobs.fly.dev/api/jobs/";
 export const JobIdInfoContext = createContext<CompanyInfoType&JobInfoType | null>(null);
 export type JobUnitType = {
 
