@@ -2,10 +2,17 @@ import React, { useState, useEffect } from 'react'
 import Logo from './Logo'
 
 const Banner = () => {
+  const defaultMode = () => {
+    if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      return true;
+    }else{
+      return false;
+    }
+  }
+  const [checked, setChecked] = useState(defaultMode);
 
-  const [checked, setChecked] = useState(false);
   useEffect(() => {
-    if (checked || localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+    if (checked) {
       document.documentElement.classList.add('dark')
     } else {
       document.documentElement.classList.remove('dark')
@@ -13,7 +20,7 @@ const Banner = () => {
   
     return () => {
     }
-  }, [localStorage, checked]);
+  }, [ checked]);
  
   
   return (

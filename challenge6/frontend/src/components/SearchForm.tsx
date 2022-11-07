@@ -1,18 +1,27 @@
 import React, { useState } from 'react'
 import ModalForm from './ModalForm'
 
+export interface FormElements extends HTMLFormControlsCollection {
+  title: HTMLInputElement,
+  location: HTMLInputElement,
+  isFullTime: HTMLInputElement,
+}
 const SearchForm = () => {
 
   const [displayModal, setDispalyModal] = useState(false);
-  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = (event: React.FormEvent<FormElements>) => {
     event.preventDefault();
+    const form = event.currentTarget;
     //do something
-    console.log("Here")
+    console.log(form.title.value)
+    console.log(form.location.value)
+    console.log(form.isFullTime.checked)
+   
 
   }
   return (
     <>
-    <form className='h-[5rem] bg-white dark:bg-darkblue -mt-10 rounded-md flex flex-row pl-6 pr-4 justify-between md:gap-x-4 xl:gap-x-6 items-center md:px-6  '  method="post" onSubmit={handleSubmit}>
+    <form className='h-[5rem] bg-white dark:bg-darkblue -mt-10 rounded-md flex flex-row pl-6 pr-4 justify-between md:gap-x-4 xl:gap-x-6 items-center md:px-6  '   method="get" onSubmit={handleSubmit}>
       <label htmlFor="title" className='flex flex-row md:items-center md:gap-x-4 md:flex-1 md:py-5 md:border-r md:border-darkgrayop20 '>
         <span className='hidden md:block bg-icon-search w-6 h-6  '></span>
         <input type="text" name="title" id="title" placeholder='Filter by title,companies,expertise...' className='appearance-none  border-0 text-darkblue  placeholder:text-darkblueop50   dark:bg-darkblue dark:text-whiteop50 dark:placeholder:text-whiteop50 focus:ring-0 md:px-0 md:max-w-[168px] xl:max-w-[275px] xl:w-[80%]'/>
@@ -22,7 +31,7 @@ const SearchForm = () => {
       </button>
       <label htmlFor="location"  className='hidden md:flex md:flex-row md:flex-1 md:items-center md:gap-x-4 md:py-5 md:border-r md:border-darkgrayop20   '>
         <span className='block bg-icon-location w-[17px] h-6 '></span>
-        <input type="text" placeholder='Filter by location...' className='appearance-none border-0 focus:ring-0 md:px-0 md:max-w-[145px] dark:bg-darkblue'/>
+        <input type="text" name='location' placeholder='Filter by location...' className='appearance-none border-0 focus:ring-0 md:px-0 md:max-w-[145px] dark:bg-darkblue'/>
       </label>
       <label htmlFor="isFullTime" className='hidden md:flex flex-row  md:gap-x-4  md:py-5 md:max-w-[110px] xl:max-w-[168px] xl:flex-1 truncate'>
         
