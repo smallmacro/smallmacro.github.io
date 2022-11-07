@@ -32,14 +32,26 @@ const JobBoard = () => {
     };
   }) as CompanyInfoType[];
   const [comInfo, setComInfo] = useState(comInfoData);
+
+  const [filterParms, setFilterParms] = useState({
+    title:"",
+    location:"",
+    isFullTime: false,
+  });
+  let afterFilterInfo = !filterParms.title ? comInfo : comInfo.filter( info => info.company.toLowerCase().includes(filterParms.title)).concat(
+    comInfo.filter(info => info.position.toLowerCase().includes(filterParms.title))
+  );
+  afterFilterInfo = !filterParms.location ? afterFilterInfo : afterFilterInfo.filter(info => info.location.toLowerCase().includes(filterParms.location));
+  afterFilterInfo = filterParms.isFullTime? afterFilterInfo.filter(info => info.contract.toLowerCase().includes("full time")): afterFilterInfo;
+  console.log(afterFilterInfo.length);
   
   return (
     <main>
       
     <section className=' flex-col mx-6 md:mx-10 max-w-[1110px] xl:mx-auto'>
-      <SearchForm comInfo={comInfo} setComInfo={setComInfo}/>
+      <SearchForm  setFilterParms={setFilterParms}/>
       
-      <JobList companyInfo={comInfo}/>
+      <JobList companyInfo={afterFilterInfo}/>
       <LoadMore />
 
     </section>

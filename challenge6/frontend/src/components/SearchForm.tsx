@@ -5,10 +5,10 @@ import ModalForm from './ModalForm'
 
 
 interface SearchProps {
-  comInfo:CompanyInfoType[];
-  setComInfo:(val: CompanyInfoType[]) => void;
+  
+  setFilterParms:(val:any) => void;
 }
-const SearchForm: React.FC<SearchProps> = ({comInfo, setComInfo}) => {
+const SearchForm: React.FC<SearchProps> = ({ setFilterParms}) => {
 
   const [displayModal, setDispalyModal] = useState(false);
   const [title, setTitle] = useState("");
@@ -17,16 +17,26 @@ const SearchForm: React.FC<SearchProps> = ({comInfo, setComInfo}) => {
   
   const handleSubmit = (event:React.FormEvent) => {
     event.preventDefault();
-    let filterInfo;
-    if (!title) {
-      // filterInfo = comInfo.filter(info )
+    let params;
+    if (!title && !location&& !isFullTime) {
+      params = {
+        title: "",
+        location: "",
+        isFullTime: false,
+      }
+      setFilterParms(params);
     }else{
-      console.log(title, location, isFullTime);
+      params = { 
+        title: title.toLowerCase(),
+        location: location.toLowerCase(),
+        isFullTime};
+      setFilterParms(params);
     }
+    setDispalyModal(false);
     
-    // const filterComInfo 
+    //filter the result only search title is not empty.
     
-    // setComInfo([]);
+  
    
   }
   return (
@@ -50,7 +60,7 @@ const SearchForm: React.FC<SearchProps> = ({comInfo, setComInfo}) => {
       </label>
 
       <label htmlFor="search" className='bg-voilet w-12 h-12 rounded-[5px] cursor-pointer md:basis-20  md:flex md:justify-center md:items-center xl:basis-[123px]'>
-        <button type="submit" title='search' name='search' className='flex' onClick={handleSubmit} >
+        <button type="button" title='search' name='search' className='flex w-full h-full items-center justify-center' onClick={handleSubmit} >
           <svg width="24" height="24" className=" fill-white w-5 h-5 mx-3.5 my-3.5 md:hidden"  xmlns="http://www.w3.org/2000/svg"><path d="M17.112 15.059h-1.088l-.377-.377a8.814 8.814 0 002.15-5.784A8.898 8.898 0 008.898 0 8.898 8.898 0 000 8.898a8.898 8.898 0 008.898 8.899c2.211 0 4.23-.808 5.784-2.143l.377.377v1.081l6.845 6.832 2.04-2.04-6.832-6.845zm-8.214 0A6.16 6.16 0 118.9 2.737a6.16 6.16 0 010 12.322z"  fillRule="nonzero"/></svg>
           <span className='hidden md:block md:text-white'>Search</span>
         </button>
@@ -59,7 +69,20 @@ const SearchForm: React.FC<SearchProps> = ({comInfo, setComInfo}) => {
     </form>
     {displayModal && 
       <div className='flex absolute top-0 left-0 bg-bgmodal w-full h-full z-10 pt-[50%]' onClick={() => setDispalyModal(!displayModal)}>
-        <ModalForm title={title} location={location} isFullTime={isFullTime} setLocation={setLocation} setIsFullTime={setIsFullTime}/>
+        <form action="" className='bg-white dark:bg-darkblue  w-full mx-6  flex flex-col  rounded-md max-h-[217px]' onSubmit={handleSubmit}  onClick={(event) => event.stopPropagation() }>
+          <label htmlFor="mLocation"  className='flex flex-row gap-x-4 px-6 py-6 border-darkgrayop20 border-b items-center'>
+            <span className='block bg-icon-location w-[17px] h-6'></span>
+            <input type="text" name='mLocation' value={location} onChange={e => setLocation(e.target.value)} placeholder='Filter by location...' className='border-0 focus:ring-0 text-base placeholder:opacity-50 px-0 py-0'/>
+          </label>
+          <label htmlFor="mIsFullTime" className='flex flex-row gap-x-4 px-6 py-6 items-center'>
+            <input type="checkbox" name="mIsFullTime" checked={isFullTime} onChange={e => setIsFullTime(e.target.checked)}  id="mIsFullTime" title='Full time Only' className='accent-darkblueop10 dark:accent-whiteop10 rounded border-darkblueop10 w-6 h-6  checked:bg-icon-check '/>
+            <span className='font-bold'>Full time Only</span>
+          </label>
+          <label htmlFor="btn" className='flex flex-row px-6 py-6 pt-0'>
+            <button type='submit' name='btn' className='w-full bg-voilet text-white dark:text-white py-4 font-bold text-base rounded-[5px]' onSubmit={handleSubmit}>Search</button>
+          </label>
+        
+        </form>
       </div>
     } 
     </>

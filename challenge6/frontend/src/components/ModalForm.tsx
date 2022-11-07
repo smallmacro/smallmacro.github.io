@@ -1,17 +1,20 @@
 import React from 'react'
-
+import { CompanyInfoType } from '../pages/Home';
 interface ModalFromProps {
-  title:string;
+ 
   location: string;
   isFullTime: boolean;
   setLocation: (val:string) => void;
   setIsFullTime: (val: boolean) => void;
+  setDispalyModal: (val:boolean) => void;
+  
 }
 
-const ModalForm:React.FC<ModalFromProps> = ({title,location,isFullTime,setLocation,setIsFullTime }) => {
+const ModalForm:React.FC<ModalFromProps> = ({location,isFullTime,setLocation,setIsFullTime,setDispalyModal }) => {
   const handleModalSubmit = (event: React.FormEvent<HTMLElement>) => {
     event.preventDefault();
-    console.log(title, location, isFullTime)
+    
+    
   }
   return (
     <form action="" className='bg-white dark:bg-darkblue  w-full mx-6  flex flex-col  rounded-md max-h-[217px]' onSubmit={handleModalSubmit}  onClick={(event) => event.stopPropagation() }>
