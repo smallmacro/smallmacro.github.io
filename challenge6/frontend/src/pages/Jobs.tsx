@@ -5,17 +5,14 @@ import Banner from '../components/Banner'
 import Footer from '../components/Footer'
 import JobInfo from '../components/JobInfo'
 import { CompanyInfoType,JobInfoType } from './Home'
+import jobService from '../services/jobs'
 
-const api = "https://devjobs.fly.dev/api/jobs/";
 export const JobIdInfoContext = createContext<CompanyInfoType&JobInfoType | null>(null);
-export type JobUnitType = {
 
-}
 
 export const jobLoader:LoaderFunction =  async ({ params }) => {
-	const url = api + params.id;
 	
-	return axios.get(url).then(res => {
+	return jobService.getJobById(Number(params.id)).then(res => {
 		return res.data;
 	}).catch(err => {
 		console.error(err);

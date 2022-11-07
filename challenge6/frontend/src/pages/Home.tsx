@@ -3,8 +3,8 @@ import React, { createContext } from 'react'
 import { LoaderFunction, useLoaderData } from 'react-router-dom'
 import Banner from '../components/Banner'
 import JobBoard from '../components/JobBoard'
+import jobService from '../services/jobs'
 
-const URL = "https://devjobs.fly.dev/api/jobs";
 export type CompanyInfoType = {
   id: number;
   company: string;
@@ -34,7 +34,9 @@ export type JobInfoType = {
 }
 
 export const homeLoader:LoaderFunction = async() =>{
-  return axios.get(URL).then(res => {
+ 
+
+  return jobService.getAllJobs().then(res => {
     
     return res.data;
   }).catch(err => {

@@ -1,5 +1,5 @@
-import React, { useContext } from 'react'
-import { JobContext } from '../pages/Home'
+import React, { useContext, useState } from 'react'
+import { CompanyInfoType, JobContext } from '../pages/Home'
 import JobList from './JobList'
 
 import LoadMore from './LoadMore'
@@ -8,8 +8,7 @@ import SearchForm from './SearchForm'
 
 const JobBoard = () => {
   const jobsData = useContext(JobContext);
-  
-  let comInfo = jobsData?.map( job => {
+  let comInfoData = jobsData?.map( job => {
     const {
       id,
       company,
@@ -21,8 +20,6 @@ const JobBoard = () => {
       location
     }
      = job;
-    
-
      return {
       id,
       company,
@@ -33,12 +30,14 @@ const JobBoard = () => {
       contract,
       location
     };
-  })
+  }) as CompanyInfoType[];
+  const [comInfo, setComInfo] = useState(comInfoData);
+  
   return (
     <main>
       
     <section className=' flex-col mx-6 md:mx-10 max-w-[1110px] xl:mx-auto'>
-      <SearchForm />
+      <SearchForm comInfo={comInfo} setComInfo={setComInfo}/>
       
       <JobList companyInfo={comInfo}/>
       <LoadMore />
