@@ -1,6 +1,6 @@
 import React, { FormEventHandler, useState } from 'react'
 import { CompanyInfoType } from '../pages/Home';
-import ModalForm from './ModalForm'
+
 
 
 
