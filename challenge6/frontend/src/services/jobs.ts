@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const baseUrl = "https://devjobs.fly.dev/api/jobs/";
+const baseUrl = "/api/jobs/";
 
 const getAllJobs = () => {
   

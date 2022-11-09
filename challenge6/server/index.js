@@ -10,11 +10,11 @@ app.use(cors())
 app.use(express.json())
 
 
+app.use(express.static('dist'))
 
-
-app.get("/", (request, response) => {
-  response.send("Hello World!")
-})
+// app.get("/", (request, response) => {
+//   response.send("Hello World!")
+// })
 
 app.get("/api/jobs", (request, response) => {
   // response.header("Access-Control-Allow-Origin", "*")

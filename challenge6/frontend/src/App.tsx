@@ -5,8 +5,8 @@ import {
  
   
 } from 'react-router-dom'
-import Home, { homeLoader } from './pages/Home'
-import Jobs, { jobLoader } from './pages/Jobs'
+import Home from './pages/Home'
+import Jobs from './pages/Jobs'
 import ErrorBoundary from './components/ErrorBoundary'
 import { QueryClient,QueryClientProvider } from '@tanstack/react-query'
 
@@ -17,13 +17,13 @@ const router =  createBrowserRouter(
     {
       path:"/",
       element:  <Home />,
-      loader: homeLoader,
+      // loader: homeLoader(queryClient),
       errorElement: <ErrorBoundary />
     },
     {
       path: '/jobs/:id',
       element: <Jobs />,
-      loader: jobLoader(queryClient),
+      // loader: jobLoader(queryClient),
       errorElement: <ErrorBoundary />
     }
   ],

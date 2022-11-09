@@ -1,7 +1,9 @@
+import { QueryClient, useQuery } from '@tanstack/react-query';
 import axios from 'axios';
 import React, { createContext } from 'react'
 import { LoaderFunction, useLoaderData } from 'react-router-dom'
 import Banner from '../components/Banner'
+import ErrorBoundary from '../components/ErrorBoundary';
 import JobBoard from '../components/JobBoard'
 import jobService from '../services/jobs'
 
@@ -33,28 +35,42 @@ export type JobInfoType = {
   role: RoleType;
 }
 
+// const getAllJobsQuery = () => ({
+//   queryKey: ['alljobs'],
+//   queryFn: jobService.getAllJobs(),
+// })
 
-export const homeLoader:LoaderFunction = async() =>{
- 
+// export const homeLoader = (queryClient:QueryClient) => {
+//   return async () => {
+//       const query = getAllJobsQuery();
+//       return queryClient.getQueryData(query.queryKey) ??
+//         (await queryClient.fetchQuery(query))
+//   }
+// }
 
-  return jobService.getAllJobs().then(res => {
-    
-    return res.data;
-  }).catch(err => {
-		console.error(err);
-	});
-}
 
 export const JobContext = createContext<Array<CompanyInfoType&JobInfoType> | null>(null);
 const Home = () => {
-  const data = useLoaderData() as Array<CompanyInfoType&JobInfoType>| null;
+  // const data = useLoaderData() as Array<CompanyInfoType&JobInfoType>| null;
+  const {data, isLoading, isError,isFetching} = useQuery(['jobs'], () => jobService.getAllJobs());
+  const jobData = data?.data as Array<CompanyInfoType&JobInfoType>| null;
+  if(isLoading){
+    return(
+      <div>Loading...</div>
+    )
+  }
+  if(isError){
+    return(
+      <ErrorBoundary />
+    )
+  }
   return (
     <>
     
     
       <Banner />
-    
-      <JobContext.Provider value={data} >
+      
+      <JobContext.Provider value={jobData} >
         <JobBoard />
       </JobContext.Provider>
     
