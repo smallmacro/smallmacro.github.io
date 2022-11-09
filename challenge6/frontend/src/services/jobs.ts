@@ -11,6 +11,8 @@ const getJobById = (id:number) => {
   return axios.get(baseUrl + id);
 }
 
+
+
 export default {
   getAllJobs: getAllJobs,
   getJobById: getJobById,

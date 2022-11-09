@@ -43,7 +43,7 @@ const JobBoard = () => {
   );
   afterFilterInfo = !filterParms.location ? afterFilterInfo : afterFilterInfo.filter(info => info.location.toLowerCase().includes(filterParms.location));
   afterFilterInfo = filterParms.isFullTime? afterFilterInfo.filter(info => info.contract.toLowerCase().includes("full time")): afterFilterInfo;
-  console.log(afterFilterInfo.length);
+ 
   
   return (
     <main>
