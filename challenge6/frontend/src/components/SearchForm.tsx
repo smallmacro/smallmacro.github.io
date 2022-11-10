@@ -51,7 +51,7 @@ const SearchForm: React.FC<SearchProps> = ({ setFilterParms}) => {
       </button>
       <label htmlFor="location"  className='hidden md:flex md:flex-row md:flex-1 md:items-center md:gap-x-4 md:py-5 md:border-r md:border-darkgrayop20   '>
         <span className='block bg-icon-location w-[17px] h-6 '></span>
-        <input type="text" name='location' value={location} onChange={e => setLocation(e.target.value)}  placeholder='Filter by location...' className='appearance-none border-0 focus:ring-0 md:px-0 md:max-w-[145px] dark:bg-darkblue'/>
+        <input type="text" name='location' value={location} onChange={e => setLocation(e.target.value)}  placeholder='Filter by location...' className='appearance-none border-0 focus:ring-0 md:px-0 md:max-w-[145px] dark:bg-darkblue   dark:text-whiteop50 dark:placeholder:text-whiteop50 dark:focus:bg-darkblue'/>
       </label>
       <label htmlFor="isFullTime" className='hidden md:flex flex-row  md:gap-x-4  md:py-5 md:max-w-[110px] xl:max-w-[168px] xl:flex-1 truncate'>
         
@@ -72,11 +72,11 @@ const SearchForm: React.FC<SearchProps> = ({ setFilterParms}) => {
         <form action="" className='bg-white dark:bg-darkblue  w-full mx-6  flex flex-col  rounded-md max-h-[217px]' onSubmit={handleSubmit}  onClick={(event) => event.stopPropagation() }>
           <label htmlFor="mLocation"  className='flex flex-row gap-x-4 px-6 py-6 border-darkgrayop20 border-b items-center'>
             <span className='block bg-icon-location w-[17px] h-6'></span>
-            <input type="text" name='mLocation' value={location} onChange={e => setLocation(e.target.value)} placeholder='Filter by location...' className='border-0 focus:ring-0 text-base placeholder:opacity-50 px-0 py-0'/>
+            <input type="text" name='mLocation' value={location} onChange={e => setLocation(e.target.value)} placeholder='Filter by location...' className='border-0 focus:ring-0 text-base placeholder:opacity-50 px-0 py-0 dark:bg-darkblue'/>
           </label>
           <label htmlFor="mIsFullTime" className='flex flex-row gap-x-4 px-6 py-6 items-center'>
-            <input type="checkbox" name="mIsFullTime" checked={isFullTime} onChange={e => setIsFullTime(e.target.checked)}  id="mIsFullTime" title='Full time Only' className='accent-darkblueop10 dark:accent-whiteop10 rounded border-darkblueop10 w-6 h-6  checked:bg-icon-check '/>
-            <span className='font-bold'>Full time Only</span>
+            <input type="checkbox" name="mIsFullTime" checked={isFullTime} onChange={e => setIsFullTime(e.target.checked)}  id="mIsFullTime" title='Full time Only' className='focus:ring-0  accent-darkblueop10 dark:accent-whiteop10 rounded border-darkblueop10 w-6 h-6  checked:bg-icon-check dark:bg-whiteop10 '/>
+            <span className='font-bold dark:text-white'>Full time Only</span>
           </label>
           <label htmlFor="btn" className='flex flex-row px-6 py-6 pt-0'>
             <button type='submit' name='btn' className='w-full bg-voilet text-white dark:text-white py-4 font-bold text-base rounded-[5px]' onSubmit={handleSubmit}>Search</button>
