@@ -10,7 +10,7 @@ const JobUnit = ({info}:JobUnitType) => {
   const baseUrl = "/jobs/";
 
   return (
-    <Link className='relative block pt-[49px] pl-8 pb-8 rounded-md bg-white dark:bg-darkblue pr-[9px] md:pr-[27px] xl:pr-8 ' to={baseUrl+info.id}>
+    <Link className='relative block pt-[49px] pl-8 pb-8 rounded-md bg-white dark:bg-darkblue pr-[9px] md:pr-[27px] xl:pr-8 ' to={baseUrl+info._id}>
       <div className={`w-[50px] h-[50px]  rounded-[15px] absolute -top-[25px] left-8 flex items-center justify-center`} style={{"backgroundColor":`${info.logoBackground}`}}>
         <img src={`/${info.logo.slice(9)}`} alt='logo' className={``}/>
       </div>

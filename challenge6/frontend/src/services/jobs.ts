@@ -7,7 +7,7 @@ const getAllJobs = () => {
   return axios.get(baseUrl );
 }
 
-const getJobById = (id:number) => {
+const getJobById = (id:string) => {
   return axios.get(baseUrl + id);
 }
 

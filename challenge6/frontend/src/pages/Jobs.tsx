@@ -12,7 +12,7 @@ import ErrorBoundary from '../components/ErrorBoundary'
 export const JobIdInfoContext = createContext<CompanyInfoType&JobInfoType | null>(null);
 
 
-const getJobByIdQuery = (id: number) => ({
+const getJobByIdQuery = (id: string) => ({
   queryKey: ['jobs', id],
   queryFn: async () => jobService.getJobById(id)
 })
@@ -36,7 +36,7 @@ const Jobs = () => {
 	// const jobUnit = useLoaderData() as CompanyInfoType&JobInfoType | null;
 	const params = useParams();
 
-	const {data, isLoading, isError} = useQuery(["jobs",params.id], () => jobService.getJobById(Number(params.id)));
+	const {data, isLoading, isError} = useQuery(["jobs",params.id], () => jobService.getJobById(params.id as string));
 
 	const jobUnit = data?.data as CompanyInfoType&JobInfoType | null
 	

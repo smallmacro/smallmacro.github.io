@@ -10,7 +10,7 @@ module.exports = {
   connectToServer : async (callback) => {
     try {
       await client.connect();
-      dbConnection =  client.db('devjobs'); 
+      dbConnection = client.db('devjobs'); 
       return callback();
     } catch (e) {
       callback(err)

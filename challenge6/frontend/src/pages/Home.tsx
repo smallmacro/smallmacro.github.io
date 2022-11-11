@@ -8,7 +8,7 @@ import JobBoard from '../components/JobBoard'
 import jobService from '../services/jobs'
 
 export type CompanyInfoType = {
-  id: number;
+  _id: string;
   company: string;
   logo: string;
   logoBackground: string;

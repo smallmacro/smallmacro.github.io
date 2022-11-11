@@ -10,7 +10,7 @@ const JobBoard = () => {
   const jobsData = useContext(JobContext);
   let comInfoData = jobsData?.map( job => {
     const {
-      id,
+      _id,
       company,
       logo,
       logoBackground,
@@ -21,7 +21,7 @@ const JobBoard = () => {
     }
      = job;
      return {
-      id,
+      _id,
       company,
       logo,
       logoBackground,

@@ -8,9 +8,9 @@ export type DisplayInfo = {
 
 const JobList = ({companyInfo} :DisplayInfo) => {
 
-  const jobUnitMarkUp = companyInfo?.map( (info ,index) => {
+  const jobUnitMarkUp = companyInfo?.map( (info ) => {
     return (
-      <JobUnit info={info} key={index}/>
+      <JobUnit info={info} key={info._id}/>
     )
     
   })
