@@ -20,7 +20,6 @@ const jobRoutes = require('./routes/jobs');
 app.use(jobRoutes);
 
 
-
 app.listen(PORT, () => {
   dbo.connectToServer( (err) => {
     if (err) {
