@@ -1,6 +1,6 @@
-const fs = require("fs")
-let rawData = fs.readFileSync('./data.json')
-let jobs = JSON.parse(rawData)
+// const fs = require("fs")
+// let rawData = fs.readFileSync('./data.json')
+// let jobs = JSON.parse(rawData)
 
 require('dotenv').config({path: './.env'});
 const PORT = process.env.PORT || 8080;
@@ -8,7 +8,7 @@ const PORT = process.env.PORT || 8080;
 const express = require('express')
 const app = express()
 const cors = require('cors');
-const dbo = require('./db/conn');
+const mongoose = require('./db/conn');
 
 app.use(cors())
 app.use(express.json())
@@ -21,10 +21,11 @@ app.use(jobRoutes);
 
 
 app.listen(PORT, () => {
-  dbo.connectToServer( (err) => {
-    if (err) {
-      console.error(err);
-    }
-  })
+  // dbo.connectToServer( (err) => {
+  //   if (err) {
+  //     console.error(err);
+  //   }
+  //   console.log("Connected Successfully");
+  // })
   console.log(`Server running on port ${PORT}`)
 })

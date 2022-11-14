@@ -1,15 +1,17 @@
 
 const express = require('express');
 const jobRoutes = express.Router();
-const dbo = require('../db/conn')
+// const dbo = require('../db/conn');
+const Job = require('../models/Jobs');
 const ObjectId = require('mongodb').ObjectId
 
 //list all jobs
 jobRoutes.route('/api/jobs/').get(async (req, res) => {
   try {
-    const db_connect = dbo.getDb();
-    const collection = await db_connect.collection('jobs');
-    const jobs = await collection.find({}).toArray();
+    // const db_connect = dbo.getDb();
+    const jobs = await Job.find({});
+    // const collection = await db_connect.collection('jobs');
+    // const jobs = await collection.find({}).toArray();
     
     res.json(jobs);
   } catch (err) {
@@ -17,18 +19,16 @@ jobRoutes.route('/api/jobs/').get(async (req, res) => {
   } finally{
     // await client.close();
   }
- 
-  
 });
 
 
 //get a specified job with an id 
 jobRoutes.route('/api/jobs/:id').get( async (req, res) => {
   try {
-    const db_connect = dbo.getDb();
-    const collection = await db_connect.collection(process.env.COLLECTION_NAME);
+    // const db_connect = dbo.getDb();
+    // const collection = await db_connect.collection(process.env.COLLECTION_NAME);
     const query = { _id: ObjectId(req.params.id) };
-    const job = await collection.findOne(query);
+    const job = await Job.findOne(query);
     
     res.json(job)
   } catch (error) {
@@ -36,23 +36,25 @@ jobRoutes.route('/api/jobs/:id').get( async (req, res) => {
   }
 }).delete( async (req, res) => {
   try {
-    const db_connect = dbo.getDb();
-    const collection = await db_connect.collection(process.env.COLLECTION_NAME);
+    // const db_connect = dbo.getDb();
+    // const collection = await db_connect.collection(process.env.COLLECTION_NAME);
     const query = { _id: ObjectId(req.params.id) };
-    const job = await collection.deleteOne(query);
+    const job = await Job.deleteOne(query);
+    
     res.status(200).end("resource deleted successfully");
   } catch (error) {
     console.error(error);
   }
 }).put( async(req, res) => {
   try {
-    const db_connect = dbo.getDb();
-    const collection = await db_connect.collection(process.env.COLLECTION_NAME);
+    // const db_connect = dbo.getDb();
+    // const collection = await db_connect.collection(process.env.COLLECTION_NAME);
     const query = { _id: ObjectId(req.params.id)};
 
     const updateObj = req.body;
-    const result = await collection.updateOne(query, { $set: updateObj});
-    console.log(`${result.modifiedCount} document(s) was/were updated`)
+    // const result = await Job.updateOne(query, { $set: updateObj});
+    await Job.findOneAndUpdate(query,updateObj);
+    // console.log(`${result.modifiedCount} document(s) was/were updated`)
     res.status(200).end("resource updated successfully")
   } catch (error) {
     console.error(error)
@@ -62,11 +64,12 @@ jobRoutes.route('/api/jobs/:id').get( async (req, res) => {
 // create a job
 jobRoutes.route('/api/jobs/create').post( async(req, res) => {
   try {
-    const db_connect= dbo.getDb();
-    const collection = await db_connect.collection(process.env.COLLECTION_NAME);
+    // const db_connect= dbo.getDb();
+    // const collection = await db_connect.collection(process.env.COLLECTION_NAME);
     const newJob = req.body;
-    const result = await collection.insertOne(newJob);
-    console.log(result.insertedId);
+    const job = new Job(newJob);
+    await job.save();
+    // console.log(result.insertedId);
     res.status(201).end("Successfully created")
     
   } catch (error) {
@@ -74,7 +77,7 @@ jobRoutes.route('/api/jobs/create').post( async(req, res) => {
   }
 })
 
-//create multiple jobs
+// create multiple jobs
 // jobRoutes.route('/api/jobs/createmany').post( async(req, res) => {
 //   try {
 //     const db_connect = dbo.getDb();

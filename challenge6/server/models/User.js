@@ -1,5 +1,5 @@
-const Mongoose = require('mongoose')
-const UserSchema = new Mongoose.Schema({
+const mongoose = require('../db/conn')
+const UserSchema = new mongoose.Schema({
   username: {
     type: String,
     unique:true,
@@ -15,7 +15,7 @@ const UserSchema = new Mongoose.Schema({
     default: "Basic",
     required: true,
   },
-})
+},{collection:'users'})
 
-const User = Mongoose.model('user', UserSchema);
+const User = mongoose.model('user', UserSchema);
 module.exports = User
