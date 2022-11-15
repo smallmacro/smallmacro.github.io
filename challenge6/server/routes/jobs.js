@@ -16,6 +16,7 @@ jobRoutes.route('/api/jobs/').get(async (req, res) => {
     res.json(jobs);
   } catch (err) {
     console.error(err);
+    res.status(404).end()
   } finally{
     // await client.close();
   }
@@ -33,6 +34,8 @@ jobRoutes.route('/api/jobs/:id').get( async (req, res) => {
     res.json(job)
   } catch (error) {
     console.error(error);
+    res.status(404).send({error: 'malformatted id'})
+
   }
 }).delete( async (req, res) => {
   try {
@@ -44,6 +47,7 @@ jobRoutes.route('/api/jobs/:id').get( async (req, res) => {
     res.status(200).end("resource deleted successfully");
   } catch (error) {
     console.error(error);
+    
   }
 }).put( async(req, res) => {
   try {
