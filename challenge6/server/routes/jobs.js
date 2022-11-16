@@ -1,12 +1,11 @@
 
 const express = require('express');
 const jobRoutes = express.Router();
-// const dbo = require('../db/conn');
 const Job = require('../models/Jobs');
 const ObjectId = require('mongodb').ObjectId
 
 //list all jobs
-jobRoutes.route('/api/jobs/').get(async (req, res) => {
+jobRoutes.route('/').get(async (req, res) => {
   try {
     // const db_connect = dbo.getDb();
     const jobs = await Job.find({});
@@ -24,7 +23,7 @@ jobRoutes.route('/api/jobs/').get(async (req, res) => {
 
 
 //get a specified job with an id 
-jobRoutes.route('/api/jobs/:id').get( async (req, res) => {
+jobRoutes.route('/:id').get( async (req, res, next) => {
   try {
     // const db_connect = dbo.getDb();
     // const collection = await db_connect.collection(process.env.COLLECTION_NAME);
@@ -34,22 +33,23 @@ jobRoutes.route('/api/jobs/:id').get( async (req, res) => {
     res.json(job)
   } catch (error) {
     console.error(error);
-    res.status(404).send({error: 'malformatted id'})
+    next(error);
 
   }
-}).delete( async (req, res) => {
+}).delete( async (req, res, next) => {
   try {
     // const db_connect = dbo.getDb();
     // const collection = await db_connect.collection(process.env.COLLECTION_NAME);
     const query = { _id: ObjectId(req.params.id) };
     const job = await Job.deleteOne(query);
     
-    res.status(200).end("resource deleted successfully");
+    res.status(204).end();
   } catch (error) {
     console.error(error);
+    next(error);
     
   }
-}).put( async(req, res) => {
+}).put( async(req, res,next) => {
   try {
     // const db_connect = dbo.getDb();
     // const collection = await db_connect.collection(process.env.COLLECTION_NAME);
@@ -61,12 +61,13 @@ jobRoutes.route('/api/jobs/:id').get( async (req, res) => {
     // console.log(`${result.modifiedCount} document(s) was/were updated`)
     res.status(200).end("resource updated successfully")
   } catch (error) {
-    console.error(error)
+    console.error(error);
+    next(error);
   }
 })
 
 // create a job
-jobRoutes.route('/api/jobs/create').post( async(req, res) => {
+jobRoutes.route('/create').post( async(req, res, next) => {
   try {
     // const db_connect= dbo.getDb();
     // const collection = await db_connect.collection(process.env.COLLECTION_NAME);
@@ -74,10 +75,12 @@ jobRoutes.route('/api/jobs/create').post( async(req, res) => {
     const job = new Job(newJob);
     await job.save();
     // console.log(result.insertedId);
-    res.status(201).end("Successfully created")
+    res.status(201).json(job)
     
   } catch (error) {
-    console.error(error)
+    console.error(error);
+    next(error);
+    res.status(400).end()
   }
 })
 

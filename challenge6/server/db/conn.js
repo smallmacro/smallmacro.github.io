@@ -24,15 +24,16 @@
 //     return dbConnection
 //   }
 // }
-
-const URI = process.env.MONGODB_URI;
+const config = require('../utils/config')
+const URI = config.MONGODB_URI
 const mongoose = require('mongoose');
+
 const options = {
   maxPoolSize: 10, // Maintain up to 10 socket connections
   serverSelectionTimeoutMS: 5000, // Keep trying to send operations for 5 seconds
   socketTimeoutMS: 45000, // Close sockets after 45 seconds of inactivity
-  dbName:'devjobs',
+  dbName: config.DB_NAME,
 }
-let dbConnection;
+
 mongoose.connect(URI, options)
 module.exports = mongoose;
