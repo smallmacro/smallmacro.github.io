@@ -43,6 +43,10 @@ const JobSchema = new mongoose.Schema({
 
     // default: undefined,
   },
+  "user": {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "User"
+  }
 }, {
   collection:'jobs'
 })

@@ -10,7 +10,7 @@
 
 - [Challenge5: Officelite coming soon site](https://smallmacro.github.io/officelitecom/)
 
-- [Challenge5: Devjobs web app](https://devjobs.fly.dev/)
+- [Challenge6: Devjobs web app](https://devjobs.fly.dev/)
 
 ## Author
 

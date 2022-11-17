@@ -189,10 +189,44 @@ describe('addition of a new job', () => {
 
 //delete a job
 
+describe('delete a job', () => { 
+  test('delete a job with a valid id', async () => { 
+    const jobAtStart = await api.get('/api/jobs')
+    const jobAtStartLen = jobAtStart.body.length
+    const jobToDelete = jobAtStart.body[0]
+
+    const toDeleteId= jobToDelete._id
+    await api.delete(`/api/jobs/${toDeleteId}`).expect(204)
+
+    const jobAtEnd = await api.get('/api/jobs')
+    expect(jobAtEnd.body).toHaveLength(jobAtStartLen - 1)
+
+    const ids = jobAtEnd.body.map(r => r._id);
+    expect(ids).not.toContain(toDeleteId)
+  })  
+
+
+  
+})
 
 
 //update a job
+describe('update a job', () => { 
+  test('successfully update a job with a valid id', async() => { 
+    const response = await api.get('/api/jobs')
+    const jobToUpdate = response.body[0]
+    const updatedJob = {
+      "position": "Full Stack Dev"
+    }
+    await api.put(`/api/jobs/${jobToUpdate._id}`).send(updatedJob).expect(200)
 
+    const afterUpdateRes = await api.get('/api/jobs')
+    const jobAfterUpdate = afterUpdateRes.body[0];
+    expect(jobAfterUpdate.position).toBe("Full Stack Dev") 
+
+  })  
+
+})
 
 afterAll(() => {
   mongoose.connection.close()
