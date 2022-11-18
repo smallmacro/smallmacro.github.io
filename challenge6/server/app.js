@@ -11,9 +11,11 @@ app.use(express.json())
 
 app.use(express.static('dist'))
 
-const jobRoutes = require('./routes/jobs');
-
+const jobRoutes = require('./routes/jobs')
+const userRouter = require('./routes/users')
+app.use('/api/users',userRouter)
 app.use('/api/jobs',jobRoutes);
+
 
 app.get('/*', (req, res) => {
   res.sendFile(path.join(__dirname, './dist/index.html'), (err) => err && res.status(500).send(err));

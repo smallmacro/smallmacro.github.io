@@ -2,6 +2,7 @@
 const express = require('express');
 const jobRoutes = express.Router();
 const Job = require('../models/Jobs');
+const User = require('../models/User');
 const ObjectId = require('mongodb').ObjectId
 
 //list all jobs
@@ -71,11 +72,38 @@ jobRoutes.route('/create').post( async(req, res, next) => {
   try {
     // const db_connect= dbo.getDb();
     // const collection = await db_connect.collection(process.env.COLLECTION_NAME);
-    const newJob = req.body;
-    const job = new Job(newJob);
-    await job.save();
+    const body = req.body
+    const {
+      company,
+      logo,
+      logoBackground,
+      position,
+      postedAt,
+      contract,
+      apply,
+      description,
+      requirements,
+      role
+    } = body
+    const user = await User.findById(body.userId)
+    const job = new Job({
+      company,
+      logo,
+      logoBackground,
+      position,
+      postedAt,
+      contract,
+      apply,
+      description,
+      requirements,
+      role, 
+      user:user._id
+    });
+    const savedJob = await job.save();
+    user.jobs = user.jobs.concat(savedJob._id)
+    await user.save()
     // console.log(result.insertedId);
-    res.status(201).json(job)
+    res.status(201).json(savedJob)
     
   } catch (error) {
     console.error(error);

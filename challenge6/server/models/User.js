@@ -14,7 +14,7 @@ const UserSchema = new mongoose.Schema({
     trim: true,
     lowercase: true,
     unique: true,
-    required: 'Email address is required'
+    required: [true,'Email address is required']
   },
   role:{
     type: String,

@@ -1,4 +1,5 @@
 // const Mongoose = require('mongoose');
+
 const mongoose = require('../db/conn')
 
 
@@ -50,6 +51,8 @@ const JobSchema = new mongoose.Schema({
 }, {
   collection:'jobs'
 })
+
+
 
 const Job = mongoose.model('job', JobSchema);
 module.exports = Job
