@@ -24,7 +24,7 @@ const UserSchema = new mongoose.Schema({
   jobs:[
     { 
       type: mongoose.Schema.Types.ObjectId,
-      ref: 'Job'
+      ref: 'job'
     }
   ]
 },{collection:'users'})

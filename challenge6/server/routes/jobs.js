@@ -9,7 +9,10 @@ const ObjectId = require('mongodb').ObjectId
 jobRoutes.route('/').get(async (req, res) => {
   try {
     // const db_connect = dbo.getDb();
-    const jobs = await Job.find({});
+    const jobs = await Job.find({}).populate('user', {
+      username:1,
+      email:1,
+    });
     // const collection = await db_connect.collection('jobs');
     // const jobs = await collection.find({}).toArray();
     

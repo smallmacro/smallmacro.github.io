@@ -30,7 +30,13 @@ userRouter.route('/new').post( async (req, res) => {
 })
 
 userRouter.route('/').get( async(req, res) => {
-  const allUsers = await User.find({})
+  const allUsers = await User.find({}).populate('jobs',
+  {
+    company:1,
+    position:1,
+    postedAt:1,
+    contract:1,
+  })
   res.status(200).json(allUsers)
 })
 
