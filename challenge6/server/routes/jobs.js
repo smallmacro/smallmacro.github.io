@@ -70,7 +70,8 @@ jobRoutes.route('/:id').get( async (req, res, next) => {
   }
 })
 
-// create a job
+// create a job only if the post request has a valid token attached
+// ----To do-----
 jobRoutes.route('/create').post( async(req, res, next) => {
   try {
     // const db_connect= dbo.getDb();

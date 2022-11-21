@@ -29,6 +29,7 @@ userRouter.route('/new').post( async (req, res) => {
   res.status(201).json(savedUser)
 })
 
+//get all users with jobs owned by them
 userRouter.route('/').get( async(req, res) => {
   const allUsers = await User.find({}).populate('jobs',
   {

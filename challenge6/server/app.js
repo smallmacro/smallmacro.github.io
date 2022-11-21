@@ -13,8 +13,10 @@ app.use(express.static('dist'))
 
 const jobRoutes = require('./routes/jobs')
 const userRouter = require('./routes/users')
+const loginRouter = require('./controllers/login')
 app.use('/api/users',userRouter)
-app.use('/api/jobs',jobRoutes);
+app.use('/api/jobs',jobRoutes)
+app.use('/api/login', loginRouter)
 
 
 app.get('/*', (req, res) => {
