@@ -1,6 +1,7 @@
 
 const express = require('express');
 const jobRoutes = express.Router();
+const jwt = require('jsonwebtoken')
 const Job = require('../models/Jobs');
 const User = require('../models/User');
 const ObjectId = require('mongodb').ObjectId
@@ -70,13 +71,32 @@ jobRoutes.route('/:id').get( async (req, res, next) => {
   }
 })
 
+const getTokenFrom = request => {
+  console.log(request)
+  const authorization = request.get('authorization')
+  if(authorization && authorization.toLowerCase().startsWith('bearer ')){
+    return authorization.substring(7)
+  }
+  return null
+}
+
 // create a job only if the post request has a valid token attached
-// ----To do-----
+// decode the token to get the user id attached to the new job
 jobRoutes.route('/create').post( async(req, res, next) => {
   try {
     // const db_connect= dbo.getDb();
     // const collection = await db_connect.collection(process.env.COLLECTION_NAME);
-    const body = req.body
+    const body = req.body;
+    const token = getTokenFrom(req)
+    
+    const decodedToken = jwt.verify(token, process.env.SECRET)
+ 
+    if(!decodedToken.id){
+      return res.status(404).json({
+        error: 'token missing or invalid'
+      })
+    }
+    
     const {
       company,
       logo,
@@ -89,7 +109,8 @@ jobRoutes.route('/create').post( async(req, res, next) => {
       requirements,
       role
     } = body
-    const user = await User.findById(body.userId)
+    const user = await User.findById(decodedToken.id)
+    
     const job = new Job({
       company,
       logo,
