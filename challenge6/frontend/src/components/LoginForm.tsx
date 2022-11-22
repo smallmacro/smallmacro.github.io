@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import loginService from '../services/login'
+import jobService from '../services/jobs'
+
 
 const LoginForm = () => {
   const [username, setUsername] = useState('');
@@ -13,6 +15,8 @@ const LoginForm = () => {
         username,
         password
       })
+      window.localStorage.setItem('loggedJobUser', JSON.stringify(user))
+      jobService.setToken(user.token)
       setUser(user)
       setPassword('')
       setUsername('')
@@ -30,7 +34,7 @@ const LoginForm = () => {
       </label>
       
       <label htmlFor="password" className='w-full '>
-        <input type="text" name="password" id="password" placeholder='Enter your password here' value={password} onChange={(e) => setPassword(e.target.value)} className='w-full'/>
+        <input type="password" name="password" id="password" placeholder='Enter your password here' value={password} onChange={(e) => setPassword(e.target.value)} className='w-full'/>
       </label>
       <p>Forget Password?</p>
       <label htmlFor="submitBtn" className='w-full  '>
