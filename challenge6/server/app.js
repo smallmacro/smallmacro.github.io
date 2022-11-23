@@ -11,13 +11,19 @@ app.use(express.json())
 
 app.use(express.static('dist'))
 
-const jobRoutes = require('./routes/jobs')
+const jobRouter = require('./routes/jobs')
 const userRouter = require('./routes/users')
 const loginRouter = require('./controllers/login')
 app.use('/api/users',userRouter)
-app.use('/api/jobs',jobRoutes)
+app.use('/api/jobs',jobRouter)
 app.use('/api/login', loginRouter)
 
+
+//only use in test NODE_ENV
+if (process.env.NODE_ENV === "test") {
+  const testingRouter = require('./routes/testing');
+  app.use('/api/testing', testingRouter)
+}
 
 app.get('/*', (req, res) => {
   res.sendFile(path.join(__dirname, './dist/index.html'), (err) => err && res.status(500).send(err));
