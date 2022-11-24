@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import loginService from '../services/login'
 import jobService from '../services/jobs'
 
@@ -8,6 +8,7 @@ const LoginForm = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [user, setUser] = useState(null)
+  const navigate = useNavigate()
   const handleLogin = async (event: React.FormEvent) => {
     event.preventDefault();
     try {
@@ -20,6 +21,7 @@ const LoginForm = () => {
       setUser(user)
       setPassword('')
       setUsername('')
+      navigate('/')
     } catch (error) {
       console.error(error)
       

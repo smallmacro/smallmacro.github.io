@@ -6,7 +6,7 @@ type credentialsType = {
 }
 
 const login = async (credentials:credentialsType) => {
-  console.log(credentials)
+  
   const response = await axios.post(baseUrl, credentials);
   return response.data
 }
